@@ -1,5 +1,5 @@
 {
-  "name": "k8s-quiz-game",
+  "name": "@harioms1522/k8s-quiz-game",
   "version": "1.1.0",
   "description": "A React component for a Kubernetes learning RPG quiz game",
   "main": "dist/index.js",
@@ -39,6 +39,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-react": "^7.23.0",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/react": "^18.2.0",

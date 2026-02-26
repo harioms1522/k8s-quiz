@@ -1,11 +1,14 @@
-const resolve = require('@rollup/plugin-node-resolve').default;
-const commonjs = require('@rollup/plugin-commonjs').default;
-const postcss = require('rollup-plugin-postcss').default;
-const peerDepsExternal = require('rollup-plugin-peer-deps-external').default;
-const copy = require('rollup-plugin-copy').default;
-const packageJson = require('./package.json');
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+import postcss from 'rollup-plugin-postcss';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import copy from 'rollup-plugin-copy';
+import { readFileSync } from 'fs';
 
-module.exports = {
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
+
+export default {
   input: 'src/package.js',
   output: [
     {
@@ -25,6 +28,11 @@ module.exports = {
     resolve({
       browser: true,
       extensions: ['.js', '.jsx'],
+    }),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+      presets: ['@babel/preset-react'],
     }),
     commonjs(),
     postcss({
