@@ -2,21 +2,54 @@
   "name": "k8s-quiz-game",
   "version": "1.0.0",
   "description": "A React component for a Kubernetes learning RPG quiz game",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rollup -c",
+    "build:dev": "rollup -c --watch",
+    "build:app": "react-scripts build",
+    "build:package": "rollup -c",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "prepublishOnly": "npm run build:package"
   },
-  "dependencies": {
+  "keywords": [
+    "react",
+    "kubernetes",
+    "k8s",
+    "quiz",
+    "game",
+    "rpg",
+    "learning",
+    "component"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "react-scripts": "5.0.1",
+    "rollup": "^4.6.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "browserslist": {
     "production": [

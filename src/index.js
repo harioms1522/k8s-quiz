@@ -1,3 +1,4 @@
+// Entry point for running as a standalone app
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import K8sQuizGame from './components/K8sQuizGame';
@@ -9,4 +10,3 @@ root.render(
     <K8sQuizGame />
   </React.StrictMode>
 );
-

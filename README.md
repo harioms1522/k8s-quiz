@@ -12,37 +12,57 @@ A React component for an interactive RPG-style quiz game to learn Kubernetes. Th
 - 💾 Local storage persistence
 - 🎨 Beautiful dark theme with RPG aesthetics
 
-## Installation
+## Installation & Usage
+
+### Option 1: Run as Standalone App
+
+Perfect for development, testing, or deploying as a standalone application.
 
 ```bash
+# Install dependencies
 npm install
+
+# Run in development mode
+npm start
+
+# Build for production
+npm run build:app
 ```
 
-## Usage
+The app will run on `http://localhost:3000` with hot reload enabled.
 
-### As a Standalone App
+### Option 2: Use as NPM Package
+
+Install and use in your own React application:
 
 ```bash
-npm start
+# Install the package
+npm install k8s-quiz-game
 ```
 
-The app will run on `http://localhost:3000`
-
-### As a Component in Your Portfolio
-
-Import the main component:
+Then use in your React app:
 
 ```jsx
-import K8sQuizGame from './components/K8sQuizGame';
+import K8sQuizGame from 'k8s-quiz-game';
 
 function App() {
-  return (
-    <div>
-      <K8sQuizGame />
-    </div>
-  );
+  return <K8sQuizGame />;
 }
 ```
+
+**Important**: Copy `quiz_game_data.json` from `node_modules/k8s-quiz-game/dist/` to your `public/` folder.
+
+### Building the Package
+
+To build the package for publishing:
+
+```bash
+npm run build:package
+# or
+npm run build
+```
+
+This creates a `dist` folder ready for publishing to npm.
 
 ## Project Structure
 
