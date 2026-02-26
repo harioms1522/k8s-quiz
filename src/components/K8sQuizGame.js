@@ -7,9 +7,10 @@ import QuizModal from './QuizModal';
 import Toast from './Toast';
 import { ACTS, LEVELS } from '../data/gameData';
 import { useGameState } from '../hooks/useGameState';
+import { ThemeProvider } from '../context/ThemeContext';
 import styles from './K8sQuizGame.module.css';
 
-const K8sQuizGame = () => {
+const K8sQuizGameInner = () => {
   const { state, markQuestDone, toggleAchievement, unlockAchievement } = useGameState();
   const [toast, setToast] = useState(null);
   const [quizQuestId, setQuizQuestId] = useState(null);
@@ -152,6 +153,12 @@ const K8sQuizGame = () => {
     </div>
   );
 };
+
+const K8sQuizGame = ({ theme, ...props }) => (
+  <ThemeProvider initialTheme={theme}>
+    <K8sQuizGameInner {...props} />
+  </ThemeProvider>
+);
 
 export default K8sQuizGame;
 
