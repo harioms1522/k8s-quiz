@@ -1,6 +1,6 @@
 {
   "name": "k8s-quiz-game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component for a Kubernetes learning RPG quiz game",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -69,4 +69,3 @@
     ]
   }
 }
-
