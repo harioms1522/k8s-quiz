@@ -1,0 +1,138 @@
+:root {
+  --bg: #0d0a06;
+  --bg2: #13100a;
+  --surface: #1a1510;
+  --surface2: #221c14;
+  --border: #3d3020;
+  --border2: #5a4530;
+  --ember: #f97316;
+  --ember2: #fbbf24;
+  --ember3: #fde68a;
+  --blood: #dc2626;
+  --sage: #4ade80;
+  --ice: #67e8f9;
+  --violet: #a78bfa;
+  --text: #e8d5b0;
+  --muted: #8a7055;
+  --dim: #5a4535;
+}
+
+.app {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.sparks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.levelupOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(249, 115, 22, 0.15);
+  pointer-events: none;
+  z-index: 9998;
+  animation: levelFlash 1.5s ease forwards;
+}
+
+@keyframes levelFlash {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  border-bottom: 1px solid var(--border);
+  background: radial-gradient(ellipse at 50% 100%, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), var(--ember2), var(--ember), transparent);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.runeBorder {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ember);
+  letter-spacing: 0.4em;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--ember3) 0%, var(--ember) 60%, #c2410c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.4));
+}
+
+.heroSubtitle {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.ornament {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  background: radial-gradient(ellipse at 50% 100%, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+}
+

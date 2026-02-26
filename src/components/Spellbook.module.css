@@ -1,0 +1,100 @@
+:root {
+  --bg: #0d0a06;
+  --bg2: #13100a;
+  --surface: #1a1510;
+  --border: #3d3020;
+  --border2: #5a4530;
+  --ember: #f97316;
+  --sage: #4ade80;
+  --text: #e8d5b0;
+}
+
+.spellbook {
+  padding: 0 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.charSheet {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.charSheet::before,
+.charSheet::after {
+  content: '◆';
+  position: absolute;
+  top: -0.6rem;
+  font-size: 1rem;
+  color: var(--ember);
+  background: var(--bg);
+  padding: 0 0.5rem;
+}
+
+.charSheet::before {
+  left: 2rem;
+}
+
+.charSheet::after {
+  right: 2rem;
+}
+
+.sectionTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--ember);
+  text-transform: uppercase;
+  padding: 1.2rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.spellGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-bottom: 1.5rem;
+}
+
+.spell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .spell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spellName {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.spellCmd {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--sage);
+  background: rgba(74, 222, 128, 0.06);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  white-space: nowrap;
+  overflow-x: auto;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.spellCmd:hover {
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+

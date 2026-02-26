@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kubernetes Chronicles — RPG Curriculum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0a06;
+  --bg2: #13100a;
+  --surface: #1a1510;
+  --surface2: #221c14;
+  --border: #3d3020;
+  --border2: #5a4530;
+  --ember: #f97316;
+  --ember2: #fbbf24;
+  --ember3: #fde68a;
+  --blood: #dc2626;
+  --sage: #4ade80;
+  --ice: #67e8f9;
+  --violet: #a78bfa;
+  --text: #e8d5b0;
+  --muted: #8a7055;
+  --dim: #5a4535;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+.sparks { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+.spark {
+  position: absolute; bottom: -10px; width: 2px; height: 2px;
+  border-radius: 50%; background: var(--ember); opacity: 0;
+  animation: rise linear infinite;
+}
+@keyframes rise {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; } 90% { opacity: 0.3; }
+  100% { transform: translateY(-100vh) translateX(var(--drift)); opacity: 0; }
+}
+.hero {
+  position: relative; text-align: center; padding: 5rem 2rem 4rem;
+  border-bottom: 1px solid var(--border);
+  background: radial-gradient(ellipse at 50% 100%, rgba(249,115,22,0.12) 0%, transparent 70%);
+  overflow: hidden;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), var(--ember2), var(--ember), transparent);
+}
+.rune-border {
+  display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+  color: var(--ember); letter-spacing: 0.4em; opacity: 0.6; margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--ember3) 0%, var(--ember) 60%, #c2410c 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.5rem; filter: drop-shadow(0 0 30px rgba(249,115,22,0.4));
+}
+.hero-subtitle { font-style: italic; color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2; }
+.char-sheet {
+  background: var(--surface); border: 1px solid var(--border2);
+  margin: 3rem auto; max-width: 900px; padding: 0 1.5rem; position: relative;
+}
+.char-sheet::before, .char-sheet::after {
+  content: '◆'; position: absolute; top: -0.6rem; font-size: 1rem;
+  color: var(--ember); background: var(--bg); padding: 0 0.5rem;
+}
+.char-sheet::before { left: 2rem; }
+.char-sheet::after { right: 2rem; }
+.section-title {
+  font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+  color: var(--ember); text-transform: uppercase; padding: 1.2rem 0 1rem;
+  border-bottom: 1px solid var(--border); margin-bottom: 1.5rem;
+}
+.char-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding-bottom: 1.5rem; }
+@media (max-width: 600px) { .char-grid { grid-template-columns: 1fr; } }
+.char-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+.stat-label { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
+.stat-value { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--ember2); }
+.xp-section { padding: 1.5rem 0; border-top: 1px solid var(--border); }
+.xp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.6rem; }
+.xp-label { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.15em; }
+.xp-numbers { font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; color: var(--ember2); }
+.xp-track { height: 10px; background: var(--bg); border: 1px solid var(--border2); border-radius: 1px; overflow: hidden; }
+.xp-fill {
+  height: 100%; background: linear-gradient(90deg, #c2410c, var(--ember), var(--ember2));
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1); position: relative; width: 0%;
+}
+.xp-fill::after {
+  content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px;
+  background: white; opacity: 0.6; filter: blur(2px);
+}
+.level-display { display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem; }
+.level-badge {
+  width: 64px; height: 64px; border: 2px solid var(--ember); display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  background: var(--surface2); flex-shrink: 0; position: relative;
+}
+.level-badge::before, .level-badge::after {
+  content: ''; position: absolute; width: 8px; height: 8px; border: 1px solid var(--ember2);
+}
+.level-badge::before { top: -4px; left: -4px; border-right: none; border-bottom: none; }
+.level-badge::after { bottom: -4px; right: -4px; border-left: none; border-top: none; }
+.level-num { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 900; color: var(--ember2); line-height: 1; }
+.level-word { font-family: 'Share Tech Mono', monospace; font-size: 0.5rem; color: var(--muted); letter-spacing: 0.1em; }
+.level-title-display { flex: 1; }
+.current-title { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--ember2); display: block; }
+.next-level-hint { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 0.2rem; }
+.abilities-grid { display: flex; flex-direction: column; gap: 0.6rem; padding-bottom: 1.5rem; }
+.ability {
+  display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1rem;
+  border: 1px solid var(--border); background: var(--bg2); transition: all 0.2s; position: relative; overflow: hidden;
+}
+.ability.locked { opacity: 0.4; }
+.ability.unlocked { border-color: rgba(249,115,22,0.4); background: rgba(249,115,22,0.05); }
+.ability.unlocked::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--ember2), var(--ember));
+}
+.ability-icon { font-size: 1.3rem; width: 2rem; text-align: center; flex-shrink: 0; }
+.ability-info { flex: 1; }
+.ability-name { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--ember3); display: block; margin-bottom: 0.1rem; }
+.ability.locked .ability-name { color: var(--muted); }
+.ability-desc { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.ability-level { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--dim); letter-spacing: 0.1em; }
+.acts { padding: 0 1.5rem; max-width: 900px; margin: 0 auto 3rem; }
+.act-card { border: 1px solid var(--border); margin-bottom: 1.5rem; background: var(--surface); position: relative; overflow: hidden; }
+.act-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+.act-I::before { background: linear-gradient(180deg, var(--ice), var(--violet)); }
+.act-II::before { background: linear-gradient(180deg, var(--violet), var(--blood)); }
+.act-III::before { background: linear-gradient(180deg, var(--ember), var(--ember2)); }
+.act-IV::before { background: linear-gradient(180deg, var(--ember2), var(--sage)); }
+.act-header { padding: 1.2rem 1.5rem; cursor: pointer; display: flex; align-items: center; gap: 1rem; user-select: none; }
+.act-header:hover { background: rgba(255,255,255,0.02); }
+.act-roman { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 900; color: var(--ember); width: 2rem; flex-shrink: 0; text-shadow: 0 0 20px rgba(249,115,22,0.5); }
+.act-info { flex: 1; }
+.act-name { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: var(--text); display: block; }
+.act-subtitle { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.act-xp-badge { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--ember2); border: 1px solid rgba(251,191,36,0.3); padding: 0.2rem 0.6rem; letter-spacing: 0.1em; white-space: nowrap; }
+.act-progress-ring { width: 40px; height: 40px; position: relative; flex-shrink: 0; }
+.act-progress-ring svg { transform: rotate(-90deg); }
+.ring-bg { fill: none; stroke: var(--border2); stroke-width: 3; }
+.ring-fill { fill: none; stroke: var(--ember); stroke-width: 3; stroke-linecap: round; transition: stroke-dashoffset 0.6s ease; }
+.ring-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+.act-arrow { color: var(--dim); font-size: 0.7rem; transition: transform 0.2s; }
+.act-card.open .act-arrow { transform: rotate(90deg); }
+.act-body { display: none; border-top: 1px solid var(--border); }
+.act-card.open .act-body { display: block; }
+.act-lore { padding: 1rem 1.5rem; background: var(--bg2); border-bottom: 1px solid var(--border); font-style: italic; font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+.act-lore::before { content: '" '; color: var(--ember); font-size: 1.2rem; }
+.act-lore::after { content: ' "'; color: var(--ember); font-size: 1.2rem; }
+.quests { padding: 1rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.quest {
+  display: flex; align-items: flex-start; gap: 1rem; padding: 0.75rem 1rem;
+  border: 1px solid transparent; cursor: pointer; transition: all 0.15s; position: relative;
+}
+.quest:hover { background: rgba(255,255,255,0.02); border-color: var(--border); }
+.quest.boss { border-color: rgba(220,38,38,0.2); background: rgba(220,38,38,0.04); margin-top: 0.5rem; }
+.quest.boss:hover { border-color: rgba(220,38,38,0.5); background: rgba(220,38,38,0.08); }
+.quest.done { opacity: 0.45; }
+.quest.done .quest-title { text-decoration: line-through; }
+.quest-checkbox {
+  width: 18px; height: 18px; border: 1.5px solid var(--border2); flex-shrink: 0; margin-top: 2px;
+  display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 0.7rem;
+}
+.quest.boss .quest-checkbox { border-color: rgba(220,38,38,0.5); }
+.quest.done .quest-checkbox { background: var(--sage); border-color: var(--sage); color: black; }
+.quest-content { flex: 1; }
+.quest-title { font-size: 0.92rem; color: var(--text); line-height: 1.4; }
+.quest.boss .quest-title { color: #fca5a5; }
+.quest-meta { display: flex; gap: 0.5rem; margin-top: 0.3rem; flex-wrap: wrap; align-items: center; }
+.q-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; padding: 0.1rem 0.4rem; border-radius: 1px; letter-spacing: 0.05em; }
+.q-tool { color: var(--ice); background: rgba(103,232,249,0.08); border: 1px solid rgba(103,232,249,0.15); }
+.q-time { color: var(--muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border); }
+.q-xp { color: var(--ember2); background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); }
+.q-boss { color: #fca5a5; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.3); }
+.boss-skull { font-size: 1rem; margin-right: 0.25rem; }
+.act-reward {
+  padding: 1rem 1.5rem; border-top: 1px solid var(--border); background: rgba(249,115,22,0.04);
+  display: flex; align-items: center; gap: 1rem;
+}
+.reward-icon { font-size: 1.4rem; }
+.reward-text { flex: 1; font-size: 0.85rem; }
+.reward-title { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--ember2); display: block; margin-bottom: 0.1rem; }
+.reward-desc { color: var(--muted); font-style: italic; font-size: 0.82rem; }
+.achievements-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; padding-bottom: 1.5rem; }
+.achievement {
+  padding: 0.9rem 1rem; border: 1px solid var(--border); background: var(--bg2);
+  cursor: pointer; transition: all 0.2s; display: flex; align-items: flex-start; gap: 0.75rem;
+}
+.achievement:hover { border-color: var(--border2); }
+.achievement.earned { border-color: rgba(251,191,36,0.35); background: rgba(251,191,36,0.05); }
+.ach-icon { font-size: 1.4rem; line-height: 1; flex-shrink: 0; filter: grayscale(1); transition: filter 0.3s; }
+.achievement.earned .ach-icon { filter: none; }
+.ach-info { flex: 1; }
+.ach-name { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--muted); display: block; margin-bottom: 0.2rem; transition: color 0.2s; }
+.achievement.earned .ach-name { color: var(--ember2); }
+.ach-desc { font-size: 0.75rem; color: var(--dim); font-style: italic; line-height: 1.3; }
+.spellbook { padding: 0 1.5rem; max-width: 900px; margin: 0 auto 3rem; }
+.spell-grid { display: flex; flex-direction: column; gap: 0.4rem; padding-bottom: 1.5rem; }
+.spell { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 0.6rem 0.9rem; background: var(--bg2); border: 1px solid var(--border); align-items: center; }
+@media (max-width: 600px) { .spell { grid-template-columns: 1fr; } }
+.spell-name { font-size: 0.85rem; color: var(--text); }
+.spell-cmd {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: var(--sage);
+  background: rgba(74,222,128,0.06); padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(74,222,128,0.15); white-space: nowrap; overflow-x: auto;
+  cursor: pointer; transition: all 0.15s;
+}
+.spell-cmd:hover { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.3); }
+.ornament { text-align: center; padding: 2rem 0 1rem; color: var(--dim); font-size: 0.8rem; letter-spacing: 0.5em; }
+footer { text-align: center; padding: 2rem 1rem 3rem; color: var(--dim); font-size: 0.8rem; font-style: italic; border-top: 1px solid var(--border); background: radial-gradient(ellipse at 50% 100%, rgba(249,115,22,0.05) 0%, transparent 70%); }
+.toast {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px);
+  background: var(--surface2); border: 1px solid var(--ember); padding: 0.75rem 1.5rem;
+  font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--ember2); z-index: 10000;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none;
+  white-space: nowrap; box-shadow: 0 0 40px rgba(249,115,22,0.3);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+@keyframes levelFlash { 0%{opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{opacity:0} }
+.levelup-overlay { position: fixed; inset: 0; background: rgba(249,115,22,0.15); pointer-events: none; z-index: 9998; opacity: 0; }
+.levelup-overlay.flash { animation: levelFlash 1.5s ease forwards; }
+
+/* ══════════════════════════════════════
+   QUIZ MODAL
+══════════════════════════════════════ */
+.quiz-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+  z-index: 50000; display: flex; align-items: center; justify-content: center;
+  padding: 1rem; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+.quiz-backdrop.active { opacity: 1; pointer-events: all; }
+
+.quiz-modal {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) var(--bg);
+}
+.quiz-backdrop.active .quiz-modal { transform: translateY(0); }
+
+.quiz-modal::before, .quiz-modal::after {
+  content: '◆'; position: absolute; top: -0.6rem; font-size: 1rem;
+  color: var(--ember); background: var(--surface); padding: 0 0.5rem;
+}
+.quiz-modal::before { left: 2rem; }
+.quiz-modal::after { right: 2rem; }
+
+.quiz-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: var(--surface);
+  z-index: 10;
+}
+
+.quiz-quest-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.quiz-meta-row {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+}
+
+.quiz-tier-badges { display: flex; gap: 0.4rem; }
+
+.tier-badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.1em;
+  padding: 0.15rem 0.5rem; border: 1px solid;
+}
+.tier-badge.beginner { color: var(--sage); border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.06); }
+.tier-badge.intermediate { color: var(--ember2); border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.06); }
+.tier-badge.advanced { color: #f87171; border-color: rgba(248,113,113,0.3); background: rgba(248,113,113,0.06); }
+
+.quiz-score-display {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.quiz-progress-bar {
+  height: 3px; background: var(--border); margin-top: 0.75rem;
+  border-radius: 2px; overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage), var(--ember2));
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* Loading state */
+.quiz-loading {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 4rem 2rem; gap: 1.5rem;
+}
+.quiz-loading-icon {
+  font-size: 2.5rem;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.quiz-loading-text {
+  font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--muted);
+  font-style: italic; text-align: center;
+}
+.quiz-loading-sub {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--dim);
+  letter-spacing: 0.1em;
+}
+
+/* Questions */
+.quiz-questions { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+.question-block {
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 1.1rem 1.2rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.question-block.visible { opacity: 1; transform: translateY(0); }
+
+.question-block.correct { border-color: rgba(74,222,128,0.4); background: rgba(74,222,128,0.04); }
+.question-block.wrong { border-color: rgba(248,113,113,0.4); background: rgba(248,113,113,0.04); }
+
+.q-tier-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.12em;
+  margin-bottom: 0.5rem; display: inline-block;
+  padding: 0.1rem 0.4rem;
+}
+.q-tier-label.beginner { color: var(--sage); }
+.q-tier-label.intermediate { color: var(--ember2); }
+.q-tier-label.advanced { color: #f87171; }
+
+.q-number {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem; color: var(--dim); margin-right: 0.4rem;
+}
+
+.q-text {
+  font-size: 0.95rem; color: var(--text); margin-bottom: 0.9rem; line-height: 1.5;
+}
+
+.q-options { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.q-option {
+  display: flex; align-items: flex-start; gap: 0.7rem; padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border); cursor: pointer; transition: all 0.15s;
+  font-size: 0.88rem; color: var(--muted); line-height: 1.4;
+}
+.q-option:hover:not(.disabled) { border-color: var(--border2); color: var(--text); background: rgba(255,255,255,0.02); }
+.q-option.selected { border-color: var(--ember); color: var(--text); background: rgba(249,115,22,0.06); }
+.q-option.correct-ans { border-color: var(--sage) !important; color: var(--sage) !important; background: rgba(74,222,128,0.08) !important; }
+.q-option.wrong-ans { border-color: #f87171 !important; color: #f87171 !important; background: rgba(248,113,113,0.08) !important; }
+.q-option.disabled { cursor: default; }
+
+.q-opt-key {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem; color: var(--dim); flex-shrink: 0; margin-top: 1px;
+  min-width: 1.2rem;
+}
+
+.q-explanation {
+  margin-top: 0.75rem; padding: 0.6rem 0.8rem;
+  border-left: 2px solid var(--border2);
+  font-size: 0.82rem; color: var(--muted); font-style: italic; line-height: 1.5;
+  display: none;
+}
+.q-explanation.show { display: block; }
+.q-explanation.correct-exp { border-color: var(--sage); }
+.q-explanation.wrong-exp { border-color: #f87171; }
+
+/* Quiz footer */
+.quiz-footer {
+  padding: 1.2rem 1.5rem; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  position: sticky; bottom: 0; background: var(--surface); flex-wrap: wrap;
+}
+
+.quiz-result-msg {
+  font-family: 'Cinzel', serif; font-size: 0.85rem;
+  flex: 1;
+}
+.quiz-result-msg.pass { color: var(--sage); }
+.quiz-result-msg.fail { color: #f87171; }
+.quiz-result-msg.pending { color: var(--muted); font-style: italic; font-family: 'Crimson Text', serif; }
+
+.quiz-btn {
+  font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em;
+  padding: 0.6rem 1.4rem; border: 1px solid; cursor: pointer; transition: all 0.2s;
+  background: none; white-space: nowrap;
+}
+.quiz-btn-close { color: var(--muted); border-color: var(--border2); }
+.quiz-btn-close:hover { color: var(--text); border-color: var(--muted); }
+.quiz-btn-complete {
+  color: var(--bg); background: var(--sage); border-color: var(--sage);
+  display: none;
+}
+.quiz-btn-complete:hover { background: #22c55e; border-color: #22c55e; }
+.quiz-btn-complete.show { display: block; }
+.quiz-btn-retry {
+  color: var(--ember2); border-color: rgba(251,191,36,0.4);
+  display: none;
+}
+.quiz-btn-retry:hover { background: rgba(251,191,36,0.08); }
+.quiz-btn-retry.show { display: block; }
+
+/* already done badge */
+.quest.done .quest-checkbox { background: var(--sage); border-color: var(--sage); color: black; }
+
+@keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.char-sheet, .act-card, .achievement { animation: fadeIn 0.4s ease backwards; }
+</style>
+</head>
+<body>
+
+<div class="sparks" id="sparks"></div>
+<div class="levelup-overlay" id="lvlOverlay"></div>
+<div class="toast" id="toast"></div>
+
+<!-- QUIZ MODAL -->
+<div class="quiz-backdrop" id="quizBackdrop">
+  <div class="quiz-modal" id="quizModal">
+    <div class="quiz-header" id="quizHeader">
+      <div class="quiz-quest-title" id="quizQuestTitle">Loading...</div>
+      <div class="quiz-meta-row">
+        <div class="quiz-tier-badges">
+          <span class="tier-badge beginner">7 BEGINNER</span>
+          <span class="tier-badge intermediate">7 INTERMEDIATE</span>
+          <span class="tier-badge advanced">6 ADVANCED</span>
+        </div>
+        <div class="quiz-score-display" id="quizScoreDisplay">0 / 20</div>
+      </div>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+    </div>
+    <div id="quizBody">
+      <div class="quiz-loading" id="quizLoading">
+        <div class="quiz-loading-icon">⚙️</div>
+        <div class="quiz-loading-text">The Oracle is forging your trial...</div>
+        <div class="quiz-loading-sub">GENERATING 20 QUESTIONS</div>
+      </div>
+    </div>
+    <div class="quiz-footer" id="quizFooter" style="display:none">
+      <div class="quiz-result-msg pending" id="quizResultMsg">Answer all questions to complete the trial.</div>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap">
+        <button class="quiz-btn quiz-btn-retry" id="quizRetryBtn" onclick="retryQuiz()">↺ Retry</button>
+        <button class="quiz-btn quiz-btn-complete" id="quizCompleteBtn" onclick="completeQuestFromQuiz()">⚔️ Mark Complete</button>
+        <button class="quiz-btn quiz-btn-close" onclick="closeQuiz()">✕ Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="rune-border">⟨ KUBERNETES CHRONICLES ⟩</div>
+    <h1>Cluster Warlord</h1>
+    <p class="hero-subtitle">A Backend Engineer's Journey from Apprentice to Master of the Control Plane</p>
+  </div>
+</div>
+
+<!-- CHARACTER SHEET -->
+<div class="char-sheet container">
+  <div class="section-title">§ Character Sheet</div>
+  <div class="char-grid">
+    <div class="char-stat"><span class="stat-label">Class</span><span class="stat-value">Backend Engineer</span></div>
+    <div class="char-stat"><span class="stat-label">Specialization</span><span class="stat-value">Django · FastAPI · K8s</span></div>
+    <div class="char-stat"><span class="stat-label">Starting Level</span><span class="stat-value">5 — Apprentice Operator</span></div>
+    <div class="char-stat"><span class="stat-label">Current Title</span><span class="stat-value" id="currentTitle">Apprentice Operator</span></div>
+  </div>
+  <div class="xp-section">
+    <div class="xp-header">
+      <span class="xp-label">EXPERIENCE POINTS</span>
+      <span class="xp-numbers"><span id="xpCurrent">0</span> / 1000 XP</span>
+    </div>
+    <div class="xp-track"><div class="xp-fill" id="xpFill"></div></div>
+    <div class="level-display">
+      <div class="level-badge">
+        <span class="level-num" id="levelNum">5</span>
+        <span class="level-word">LEVEL</span>
+      </div>
+      <div class="level-title-display">
+        <span class="current-title" id="levelTitle">Apprentice Operator</span>
+        <div class="next-level-hint" id="nextHint">Complete Act I to reach Level 6</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-title">§ Abilities</div>
+  <div class="abilities-grid" id="abilitiesGrid"></div>
+</div>
+
+<div class="ornament">— ⚔ —</div>
+<div class="acts" id="actsContainer"></div>
+<div class="ornament">— ⚔ —</div>
+
+<div class="char-sheet container">
+  <div class="section-title">§ Achievements</div>
+  <div class="achievements-grid" id="achievementsGrid"></div>
+</div>
+
+<div class="ornament">— ⚔ —</div>
+
+<div class="spellbook">
+  <div class="char-sheet" style="padding:0 1.5rem;">
+    <div class="section-title">§ Spellbook — Quick Commands</div>
+    <div class="spell-grid" id="spellGrid"></div>
+  </div>
+</div>
+
+<footer>⚔️ May your pods stay Running and your pipelines stay green.</footer>
+
+<script>
+// ─── DATA ───
+const LEVELS = [
+  { lv:5,  xp:0,    title:"Apprentice Operator",  ability:null },
+  { lv:6,  xp:150,  title:"Control Plane Scout",  ability:{ icon:"🔭", name:"Read the Scheduler",          desc:"You can predict where a pod will land and why" } },
+  { lv:7,  xp:300,  title:"Node Wrangler",         ability:{ icon:"🐉", name:"Tame the Pod",                desc:"You can debug any CrashLoopBackOff without panic" } },
+  { lv:8,  xp:500,  title:"Network Weaver",        ability:{ icon:"🕸️", name:"Bend Traffic to Your Will",   desc:"Route, restrict, and expose services confidently" } },
+  { lv:9,  xp:700,  title:"Helm Forger",           ability:{ icon:"⚒️", name:"Craft Deployable Artifacts",  desc:"Write a production Helm chart from scratch" } },
+  { lv:10, xp:1000, title:"Cluster Warlord ★",    ability:{ icon:"👑", name:"GitOps Omniscience",           desc:"Trace any prod issue from Git commit to running pod" } },
+];
+
+const ACTS = [
+  {
+    id:"I", cls:"act-I", name:"The Architecture Trials", subtitle:"Control plane · Pods · Deployments", xp:300,
+    lore:"You have used the blade. Now learn its make. The control plane is a black box no more. Complete these trials to earn the title of Node Wrangler.",
+    reward:{ icon:"🐉", title:"Node Wrangler unlocked", desc:"Ability: Tame the Pod — you can now debug any CrashLoopBackOff" },
+    quests:[
+      { id:"1-1", title:"Study the control plane: API server, etcd, scheduler, controller manager", xp:40,  tags:["kubectl","~2h"],       boss:false },
+      { id:"1-2", title:"Master the pod lifecycle: creation, scheduling, restarts, termination",    xp:30,  tags:["kubectl","~1.5h"],     boss:false },
+      { id:"1-3", title:"Learn ReplicaSets, Deployments, and DaemonSets — when to use each",        xp:40,  tags:["manifests","~2h"],     boss:false },
+      { id:"1-4", title:"Understand ConfigMaps, Secrets, and environment injection",                xp:30,  tags:["manifests","~1.5h"],   boss:false },
+      { id:"1-5", title:"BOSS: Deploy a multi-container app (Django + Postgres) — must survive kubectl delete pod", xp:160, tags:["minikube","~3h","BOSS"], boss:true },
+    ]
+  },
+  {
+    id:"II", cls:"act-II", name:"The Network Labyrinth", subtitle:"Services · Ingress · DNS · Network Policies", xp:200,
+    lore:"The pods speak to each other in whispers. Learn to hear them — then learn to silence them. Networking is where engineers go to suffer. Emerge from the labyrinth and claim the title of Network Weaver.",
+    reward:{ icon:"🕸️", title:"Network Weaver unlocked", desc:"Ability: Bend Traffic to Your Will — Ingress, DNS, and NetworkPolicy mastered" },
+    quests:[
+      { id:"2-1", title:"Understand ClusterIP, NodePort, and LoadBalancer — draw the traffic path", xp:30, tags:["networking","~2h"],   boss:false },
+      { id:"2-2", title:"Master in-cluster DNS: how svc-name.namespace.svc.cluster.local resolves", xp:30, tags:["coredns","~1.5h"],   boss:false },
+      { id:"2-3", title:"Configure nginx-ingress with routing rules and TLS termination",            xp:40, tags:["ingress","~2h"],     boss:false },
+      { id:"2-4", title:"Write a NetworkPolicy that isolates your app's namespace",                  xp:30, tags:["security","~1.5h"], boss:false },
+      { id:"2-5", title:"BOSS: Expose app via Ingress with a real TLS cert via cert-manager",        xp:70, tags:["cert-manager","~3h","BOSS"], boss:true },
+    ]
+  },
+  {
+    id:"III", cls:"act-III", name:"The Helm Forge", subtitle:"Charts · Templates · Values · Releases", xp:200,
+    lore:"Raw YAML is the weapon of savages. A true engineer forges charts. Descend into the Forge and emerge with a reusable, versioned Helm chart.",
+    reward:{ icon:"⚒️", title:"Helm Forger unlocked", desc:"Ability: Craft Deployable Artifacts — helm install deploys your app from zero" },
+    quests:[
+      { id:"3-1", title:"Learn Helm fundamentals: charts, values.yaml, templates, releases",      xp:25, tags:["helm","~1.5h"], boss:false },
+      { id:"3-2", title:"Master Go templating: conditionals, loops, named templates",             xp:40, tags:["helm","~2h"],   boss:false },
+      { id:"3-3", title:"Implement dev/prod value overrides with -f flags",                       xp:30, tags:["helm","~1.5h"], boss:false },
+      { id:"3-4", title:"Add Helm hooks and a subchart dependency to your chart",                 xp:35, tags:["helm","~2h"],   boss:false },
+      { id:"3-5", title:"BOSS: Convert all manifests into a Helm chart — helm install from zero", xp:70, tags:["helm","~4h","BOSS"], boss:true },
+    ]
+  },
+  {
+    id:"IV", cls:"act-IV", name:"The GitOps Ascension", subtitle:"Flux CD · HelmRelease · Debugging · HPA", xp:300,
+    lore:"You have mastered the cluster. Now make the cluster master itself. GitOps means the cluster heals itself from Git. Complete the Capstone and ascend to Cluster Warlord.",
+    reward:{ icon:"👑", title:"Cluster Warlord ★ unlocked", desc:"Ability: GitOps Omniscience — you have achieved mastery of the control plane" },
+    quests:[
+      { id:"4-1", title:"Understand GitOps: declarative infra, reconciliation loop, drift detection", xp:30,  tags:["gitops","~1.5h"], boss:false },
+      { id:"4-2", title:"Deep dive Flux CD: HelmRelease, Kustomization, ImageAutomation",             xp:60,  tags:["flux","~3h"],    boss:false },
+      { id:"4-3", title:"Master the prod debugging toolkit: describe, logs, exec, events, top",        xp:50,  tags:["kubectl","~2h"], boss:false },
+      { id:"4-4", title:"Configure HPA + resource requests/limits on your app",                        xp:40,  tags:["scaling","~2h"], boss:false },
+      { id:"4-5", title:"FINAL BOSS: Deploy via Flux — push image tag, cluster auto-updates with zero manual kubectl", xp:120, tags:["flux","helm","~5h","FINAL BOSS"], boss:true },
+    ]
+  }
+];
+
+const ACHIEVEMENTS = [
+  { id:"first-blood",  icon:"🥇", name:"First Blood",       desc:"Complete your first quest" },
+  { id:"crashloop",    icon:"💀", name:"CrashLoopSurvivor", desc:"Fix a CrashLoopBackOff in the wild" },
+  { id:"webmaster",    icon:"🕸️", name:"Webmaster",         desc:"Successfully curl your app through Ingress + TLS" },
+  { id:"chart-maker",  icon:"📦", name:"Chart Maker",        desc:"helm install works first try" },
+  { id:"the-loop",     icon:"🔁", name:"The Loop",           desc:"Watch Flux auto-reconcile a drift" },
+  { id:"speed-runner", icon:"⚡", name:"Speed Runner",       desc:"Complete a boss battle in under 2 hours" },
+  { id:"act1-done",    icon:"🏰", name:"Act I Complete",     desc:"All Architecture Trials cleared" },
+  { id:"act2-done",    icon:"🌐", name:"Act II Complete",    desc:"The Labyrinth has been conquered" },
+  { id:"act3-done",    icon:"⚒️", name:"Act III Complete",   desc:"The Forge has been mastered" },
+  { id:"warlord",      icon:"👑", name:"Cluster Warlord",    desc:"All 4 Acts complete. Max level reached." },
+];
+
+const SPELLS = [
+  { name:"Reveal all pods",           cmd:"kubectl get pods -A" },
+  { name:"Inspect a fallen warrior",  cmd:"kubectl describe pod <n>" },
+  { name:"Stream battle log",         cmd:"kubectl logs <pod> -f" },
+  { name:"Enter the pod realm",       cmd:"kubectl exec -it <pod> -- sh" },
+  { name:"Forge a release",           cmd:"helm install <n> ./chart -f values.yaml" },
+  { name:"Reforge a release",         cmd:"helm upgrade --install <n> ./chart" },
+  { name:"Survey the GitOps realm",   cmd:"flux get all" },
+  { name:"Force Git reconciliation",  cmd:"flux reconcile source git flux-system" },
+  { name:"Diagnose cluster vitals",   cmd:"kubectl top nodes && kubectl top pods" },
+];
+
+// ─── STATE ───
+const STORAGE = 'k8s_rpg_v3';
+let state = { quests:{}, achievements:{} };
+try { state = JSON.parse(localStorage.getItem(STORAGE)) || state; } catch {}
+function save() { localStorage.setItem(STORAGE, JSON.stringify(state)); }
+
+// ─── QUIZ STATE ───
+let quizState = { questId:null, questTitle:null, questions:[], answers:{}, submitted:{}, pendingComplete:false };
+
+// ─── HELPERS ───
+function totalXP() {
+  let xp = 0;
+  ACTS.forEach(act => act.quests.forEach(q => { if (state.quests[q.id]) xp += q.xp; }));
+  return xp;
+}
+function currentLevel() {
+  const xp = totalXP(); let lv = LEVELS[0];
+  for (const l of LEVELS) { if (xp >= l.xp) lv = l; }
+  return lv;
+}
+function questsDone() { return Object.values(state.quests).filter(Boolean).length; }
+
+// ─── RENDER ABILITIES ───
+function renderAbilities() {
+  const grid = document.getElementById('abilitiesGrid');
+  const lv = currentLevel();
+  grid.innerHTML = '';
+  LEVELS.slice(1).forEach(l => {
+    const ab = l.ability;
+    const unlocked = lv.lv >= l.lv;
+    const div = document.createElement('div');
+    div.className = 'ability ' + (unlocked ? 'unlocked' : 'locked');
+    div.innerHTML = `<div class="ability-icon">${ab.icon}</div><div class="ability-info"><span class="ability-name">${ab.name}</span><span class="ability-desc">${ab.desc}</span></div><span class="ability-level">LV ${l.lv}</span>`;
+    grid.appendChild(div);
+  });
+}
+
+// ─── RENDER ACTS ───
+function renderActs() {
+  const container = document.getElementById('actsContainer');
+  container.innerHTML = '';
+  ACTS.forEach((act, i) => {
+    const done = act.quests.filter(q => state.quests[q.id]).length;
+    const total = act.quests.length;
+    const circumference = 2 * Math.PI * 15;
+    const offset = circumference * (1 - done/total);
+    const card = document.createElement('div');
+    card.className = `act-card ${act.cls}`;
+    card.style.animationDelay = `${i * 0.08}s`;
+    if (i === 0) card.classList.add('open');
+    card.innerHTML = `
+      <div class="act-header" onclick="toggleAct(this.parentElement)">
+        <span class="act-roman">${act.id}</span>
+        <div class="act-info"><span class="act-name">${act.name}</span><span class="act-subtitle">${act.subtitle}</span></div>
+        <span class="act-xp-badge">${act.xp} XP</span>
+        <div class="act-progress-ring">
+          <svg width="40" height="40" viewBox="0 0 40 40">
+            <circle class="ring-bg" cx="20" cy="20" r="15"/>
+            <circle class="ring-fill" cx="20" cy="20" r="15" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"/>
+          </svg>
+          <div class="ring-text">${done}/${total}</div>
+        </div>
+        <span class="act-arrow">▶</span>
+      </div>
+      <div class="act-body">
+        <div class="act-lore">${act.lore}</div>
+        <div class="quests">
+          ${act.quests.map(q => {
+            const isBoss = q.boss;
+            const isDone = !!state.quests[q.id];
+            const tagHtml = q.tags.map(t => {
+              if (t === 'BOSS' || t === 'FINAL BOSS') return `<span class="q-tag q-boss">⚔️ ${t}</span>`;
+              if (t.startsWith('~')) return `<span class="q-tag q-time">${t}</span>`;
+              return `<span class="q-tag q-tool">${t}</span>`;
+            }).join('');
+            return `<div class="quest ${isBoss?'boss':''} ${isDone?'done':''}" id="quest-${q.id}" onclick="handleQuestClick('${q.id}')">
+              <div class="quest-checkbox">${isDone?'✓':''}</div>
+              <div class="quest-content">
+                <div class="quest-title">${isBoss?'<span class="boss-skull">💀</span>':''}${q.title}</div>
+                <div class="quest-meta">${tagHtml}<span class="q-tag q-xp">+${q.xp} XP</span></div>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+        <div class="act-reward">
+          <span class="reward-icon">${act.reward.icon}</span>
+          <div class="reward-text"><span class="reward-title">${act.reward.title}</span><span class="reward-desc">${act.reward.desc}</span></div>
+        </div>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+// ─── RENDER ACHIEVEMENTS ───
+function renderAchievements() {
+  const grid = document.getElementById('achievementsGrid');
+  grid.innerHTML = '';
+  ACHIEVEMENTS.forEach((a, i) => {
+    const earned = !!state.achievements[a.id];
+    const div = document.createElement('div');
+    div.className = 'achievement ' + (earned ? 'earned' : '');
+    div.style.animationDelay = `${i * 0.05}s`;
+    if (!a.id.startsWith('act') && a.id !== 'warlord') {
+      div.style.cursor = 'pointer';
+      div.onclick = () => toggleAchievement(a.id);
+    }
+    div.innerHTML = `<span class="ach-icon">${a.icon}</span><div class="ach-info"><span class="ach-name">${a.name}</span><span class="ach-desc">${a.desc}</span></div>`;
+    grid.appendChild(div);
+  });
+}
+
+// ─── RENDER SPELLS ───
+function renderSpells() {
+  document.getElementById('spellGrid').innerHTML = SPELLS.map(s =>
+    `<div class="spell"><span class="spell-name">${s.name}</span><code class="spell-cmd" onclick="copySpell(this,'${s.cmd}')">${s.cmd}</code></div>`
+  ).join('');
+}
+
+// ─── UPDATE XP BAR ───
+function updateXP() {
+  const xp = totalXP(), lv = currentLevel();
+  document.getElementById('xpFill').style.width = (xp/1000*100)+'%';
+  document.getElementById('xpCurrent').textContent = xp;
+  document.getElementById('levelNum').textContent = lv.lv;
+  document.getElementById('levelTitle').textContent = lv.title;
+  document.getElementById('currentTitle').textContent = lv.title;
+  const next = LEVELS.find(l => l.xp > xp);
+  document.getElementById('nextHint').textContent = next
+    ? `${next.xp - xp} XP until Level ${next.lv} — ${next.title}`
+    : '★ Maximum level achieved. You are the Cluster Warlord.';
+}
+
+// ─── QUEST CLICK — opens quiz instead of directly completing ───
+function handleQuestClick(id) {
+  const el = document.getElementById('quest-' + id);
+  // If already done, clicking un-does it directly
+  if (state.quests[id]) {
+    markQuestDone(id, false);
+    return;
+  }
+  // Otherwise open quiz
+  openQuiz(id);
+}
+
+// ─── MARK QUEST DONE/UNDONE ───
+function markQuestDone(id, done) {
+  const prevLv = currentLevel().lv;
+  state.quests[id] = done;
+  save();
+  const el = document.getElementById('quest-' + id);
+  if (done) {
+    el.classList.add('done');
+    el.querySelector('.quest-checkbox').textContent = '✓';
+    if (questsDone() === 1) unlockAchievement('first-blood');
+  } else {
+    el.classList.remove('done');
+    el.querySelector('.quest-checkbox').textContent = '';
+  }
+  checkActCompletions();
+  updateXP();
+  updateActRings();
+  renderAbilities();
+  const newLv = currentLevel().lv;
+  if (done && newLv > prevLv) {
+    showToast(`⚔️ LEVEL UP! You are now Level ${newLv} — ${currentLevel().title}`);
+    flashLevelUp();
+  }
+  if (totalXP() >= 1000) unlockAchievement('warlord');
+}
+
+// ─── OPEN QUIZ ───
+function openQuiz(questId) {
+  const quest = ACTS.flatMap(a => a.quests).find(q => q.id === questId);
+  if (!quest) return;
+
+  quizState = { questId, questTitle: quest.title, questions:[], answers:{}, submitted:{}, pendingComplete:false };
+
+  document.getElementById('quizQuestTitle').textContent = quest.title;
+  document.getElementById('quizScoreDisplay').textContent = '0 / 20';
+  document.getElementById('quizProgressFill').style.width = '0%';
+  document.getElementById('quizBody').innerHTML = `
+    <div class="quiz-loading" id="quizLoading">
+      <div class="quiz-loading-icon">⚙️</div>
+      <div class="quiz-loading-text">The Oracle is forging your trial...</div>
+      <div class="quiz-loading-sub">GENERATING 20 QUESTIONS</div>
+    </div>`;
+  document.getElementById('quizFooter').style.display = 'none';
+  document.getElementById('quizBackdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  generateQuestions(quest.title);
+}
+
+// ─── GENERATE QUESTIONS via Anthropic API ───
+async function generateQuestions(questTitle) {
+  const prompt = `You are a Kubernetes expert creating a quiz for an intermediate backend engineer learning Kubernetes.
+
+The quest topic is: "${questTitle}"
+
+Generate exactly 20 multiple choice questions in this JSON format. No extra text, only valid JSON:
+{
+  "questions": [
+    {
+      "tier": "beginner",
+      "question": "...",
+      "options": ["A) ...", "B) ...", "C) ...", "D) ..."],
+      "correct": 0,
+      "explanation": "Brief explanation of the correct answer."
+    }
+  ]
+}
+
+Rules:
+- Exactly 7 beginner questions (fundamental concepts, definitions, basic usage)
+- Exactly 7 intermediate questions (how things work, troubleshooting, configuration)
+- Exactly 6 advanced questions (edge cases, production concerns, deep internals, gotchas)
+- Each question has exactly 4 options (A, B, C, D)
+- "correct" is the 0-based index of the correct option (0=A, 1=B, 2=C, 3=D)
+- Questions must be specifically about: "${questTitle}"
+- Make questions practical and relevant to a Django/FastAPI backend engineer using Kubernetes in production
+- Keep explanations concise (1-2 sentences)
+- Return ONLY the JSON object, no markdown, no backticks`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    let raw = data.content?.find(b => b.type === 'text')?.text || '';
+    // Strip any markdown fences
+    raw = raw.replace(/```json|```/g, '').trim();
+    const parsed = JSON.parse(raw);
+    quizState.questions = parsed.questions;
+    renderQuiz();
+  } catch (err) {
+    document.getElementById('quizBody').innerHTML = `
+      <div class="quiz-loading">
+        <div class="quiz-loading-icon">⚠️</div>
+        <div class="quiz-loading-text">The Oracle's connection was severed.</div>
+        <div class="quiz-loading-sub">${err.message}</div>
+      </div>`;
+    document.getElementById('quizFooter').style.display = 'flex';
+    document.getElementById('quizResultMsg').className = 'quiz-result-msg fail';
+    document.getElementById('quizResultMsg').textContent = 'Failed to generate questions. Check your connection.';
+    document.getElementById('quizRetryBtn').classList.add('show');
+  }
+}
+
+// ─── RENDER QUIZ QUESTIONS ───
+function renderQuiz() {
+  const qs = quizState.questions;
+  if (!qs || qs.length === 0) return;
+
+  const optLabels = ['A', 'B', 'C', 'D'];
+  let html = '<div class="quiz-questions">';
+
+  qs.forEach((q, idx) => {
+    const tier = q.tier || 'beginner';
+    html += `
+      <div class="question-block" id="qblock-${idx}">
+        <div>
+          <span class="q-tier-label ${tier}">${tier.toUpperCase()}</span>
+          <span class="q-number">#${idx+1}</span>
+        </div>
+        <div class="q-text">${q.question}</div>
+        <div class="q-options">
+          ${q.options.map((opt, oi) => `
+            <div class="q-option" id="qopt-${idx}-${oi}" onclick="selectOption(${idx}, ${oi})">
+              <span class="q-opt-key">${optLabels[oi]}</span>
+              <span>${opt.replace(/^[A-D]\)\s*/,'')}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="q-explanation" id="qexp-${idx}"></div>
+      </div>`;
+  });
+
+  html += '</div>';
+  document.getElementById('quizBody').innerHTML = html;
+  document.getElementById('quizFooter').style.display = 'flex';
+  document.getElementById('quizResultMsg').className = 'quiz-result-msg pending';
+  document.getElementById('quizResultMsg').textContent = 'Answer all 20 questions to complete the trial.';
+  document.getElementById('quizCompleteBtn').classList.remove('show');
+  document.getElementById('quizRetryBtn').classList.remove('show');
+
+  // Stagger reveal
+  requestAnimationFrame(() => {
+    qs.forEach((_, i) => {
+      setTimeout(() => {
+        const el = document.getElementById('qblock-' + i);
+        if (el) el.classList.add('visible');
+      }, i * 40);
+    });
+  });
+}
+
+// ─── SELECT OPTION ───
+function selectOption(qIdx, optIdx) {
+  if (quizState.submitted[qIdx] !== undefined) return; // already answered
+
+  const qs = quizState.questions;
+  const q = qs[qIdx];
+  quizState.answers[qIdx] = optIdx;
+  quizState.submitted[qIdx] = optIdx;
+
+  const isCorrect = optIdx === q.correct;
+  const block = document.getElementById('qblock-' + qIdx);
+  block.classList.add(isCorrect ? 'correct' : 'wrong');
+
+  // Style all options
+  q.options.forEach((_, oi) => {
+    const opt = document.getElementById(`qopt-${qIdx}-${oi}`);
+    opt.classList.add('disabled');
+    if (oi === q.correct) opt.classList.add('correct-ans');
+    else if (oi === optIdx && !isCorrect) opt.classList.add('wrong-ans');
+  });
+
+  // Show explanation
+  const exp = document.getElementById('qexp-' + qIdx);
+  exp.textContent = q.explanation;
+  exp.className = 'q-explanation show ' + (isCorrect ? 'correct-exp' : 'wrong-exp');
+
+  // Update score
+  updateQuizScore();
+}
+
+// ─── UPDATE QUIZ SCORE ───
+function updateQuizScore() {
+  const total = quizState.questions.length;
+  const answered = Object.keys(quizState.submitted).length;
+  const correct = Object.entries(quizState.submitted).filter(([idx, ans]) =>
+    ans === quizState.questions[idx].correct
+  ).length;
+
+  document.getElementById('quizScoreDisplay').textContent = `${correct} / ${total}`;
+  document.getElementById('quizProgressFill').style.width = `${(answered/total)*100}%`;
+
+  if (answered === total) {
+    const passed = correct === total;
+    const resultMsg = document.getElementById('quizResultMsg');
+    if (passed) {
+      resultMsg.className = 'quiz-result-msg pass';
+      resultMsg.textContent = `⚔️ TRIAL COMPLETE — ${correct}/${total} correct. You may claim your XP.`;
+      document.getElementById('quizCompleteBtn').classList.add('show');
+      quizState.pendingComplete = true;
+    } else {
+      resultMsg.className = 'quiz-result-msg fail';
+      resultMsg.textContent = `✕ TRIAL FAILED — ${correct}/${total} correct. All 20 must be answered correctly.`;
+      document.getElementById('quizRetryBtn').classList.add('show');
+    }
+  }
+}
+
+// ─── COMPLETE QUEST FROM QUIZ ───
+function completeQuestFromQuiz() {
+  if (!quizState.pendingComplete) return;
+  closeQuiz();
+  setTimeout(() => {
+    markQuestDone(quizState.questId, true);
+    showToast(`⚔️ Quest complete! +${ACTS.flatMap(a=>a.quests).find(q=>q.id===quizState.questId)?.xp||0} XP`);
+  }, 300);
+}
+
+// ─── RETRY QUIZ ───
+function retryQuiz() {
+  const id = quizState.questId;
+  const title = quizState.questTitle;
+  quizState = { questId:id, questTitle:title, questions:[], answers:{}, submitted:{}, pendingComplete:false };
+  document.getElementById('quizBody').innerHTML = `
+    <div class="quiz-loading" id="quizLoading">
+      <div class="quiz-loading-icon">⚙️</div>
+      <div class="quiz-loading-text">The Oracle is forging a new trial...</div>
+      <div class="quiz-loading-sub">GENERATING 20 QUESTIONS</div>
+    </div>`;
+  document.getElementById('quizFooter').style.display = 'none';
+  generateQuestions(title);
+}
+
+// ─── CLOSE QUIZ ───
+function closeQuiz() {
+  document.getElementById('quizBackdrop').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close on backdrop click
+document.getElementById('quizBackdrop').addEventListener('click', function(e) {
+  if (e.target === this) closeQuiz();
+});
+
+// ─── ACT COMPLETIONS ───
+function checkActCompletions() {
+  const actIds = ['act1-done','act2-done','act3-done'];
+  ACTS.forEach((act,i) => {
+    if (act.quests.every(q => state.quests[q.id]) && actIds[i]) unlockAchievement(actIds[i]);
+  });
+}
+
+function updateActRings() {
+  ACTS.forEach(act => {
+    const done = act.quests.filter(q=>state.quests[q.id]).length;
+    const total = act.quests.length;
+    const circumference = 2*Math.PI*15;
+    const card = document.querySelector(`.${act.cls}`);
+    if (!card) return;
+    const ring = card.querySelector('.ring-fill');
+    const text = card.querySelector('.ring-text');
+    if (ring) ring.style.strokeDashoffset = circumference*(1-done/total);
+    if (text) text.textContent = `${done}/${total}`;
+  });
+}
+
+// ─── ACHIEVEMENTS ───
+function toggleAchievement(id) {
+  state.achievements[id] = !state.achievements[id];
+  save(); renderAchievements();
+  const ach = ACHIEVEMENTS.find(a=>a.id===id);
+  if (state.achievements[id] && ach) showToast(`🏆 Achievement: ${ach.name}`);
+}
+function unlockAchievement(id) {
+  if (state.achievements[id]) return;
+  state.achievements[id] = true;
+  save(); renderAchievements();
+  const ach = ACHIEVEMENTS.find(a=>a.id===id);
+  if (ach) showToast(`🏆 Achievement Unlocked: ${ach.name}`);
+}
+
+// ─── MISC ───
+function toggleAct(card) { card.classList.toggle('open'); }
+
+function copySpell(el, cmd) {
+  navigator.clipboard.writeText(cmd).catch(()=>{});
+  const orig = el.textContent;
+  el.textContent = 'copied!';
+  setTimeout(() => { el.textContent = orig; }, 1200);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+function flashLevelUp() {
+  const el = document.getElementById('lvlOverlay');
+  el.classList.remove('flash');
+  void el.offsetWidth;
+  el.classList.add('flash');
+}
+
+function createSparks() {
+  const container = document.getElementById('sparks');
+  for (let i = 0; i < 18; i++) {
+    const s = document.createElement('div');
+    s.className = 'spark';
+    s.style.left = Math.random()*100+'%';
+    s.style.animationDuration = (6+Math.random()*10)+'s';
+    s.style.animationDelay = (Math.random()*8)+'s';
+    s.style.setProperty('--drift', (Math.random()*80-40)+'px');
+    s.style.opacity = Math.random()*0.6;
+    if (Math.random()>0.5) { s.style.background='#fbbf24'; s.style.width='1px'; s.style.height='4px'; }
+    container.appendChild(s);
+  }
+}
+
+// ─── INIT ───
+createSparks();
+renderAbilities();
+renderActs();
+renderAchievements();
+renderSpells();
+updateXP();
+</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+:root {
+  --bg: #0d0a06;
+  --bg2: #13100a;
+  --surface: #1a1510;
+  --surface2: #221c14;
+  --border: #3d3020;
+  --border2: #5a4530;
+  --ember: #f97316;
+  --ember2: #fbbf24;
+  --ember3: #fde68a;
+  --muted: #8a7055;
+  --dim: #5a4535;
+}
+
+.charSheet {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  margin: 3rem auto;
+  max-width: 900px;
+  padding: 0 1.5rem;
+  position: relative;
+  animation: fadeIn 0.4s ease backwards;
+}
+
+.charSheet::before,
+.charSheet::after {
+  content: '◆';
+  position: absolute;
+  top: -0.6rem;
+  font-size: 1rem;
+  color: var(--ember);
+  background: var(--bg);
+  padding: 0 0.5rem;
+}
+
+.charSheet::before {
+  left: 2rem;
+}
+
+.charSheet::after {
+  right: 2rem;
+}
+
+.sectionTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--ember);
+  text-transform: uppercase;
+  padding: 1.2rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.charGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .charGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.charStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statLabel {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: var(--ember2);
+}
+
+.xpSection {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.xpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+}
+
+.xpLabel {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+}
+
+.xpNumbers {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--ember2);
+}
+
+.xpTrack {
+  height: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.xpFill {
+  height: 100%;
+  background: linear-gradient(90deg, #c2410c, var(--ember), var(--ember2));
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+.xpFill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: white;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+.levelDisplay {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.levelBadge {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--ember);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface2);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.levelBadge::before,
+.levelBadge::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--ember2);
+}
+
+.levelBadge::before {
+  top: -4px;
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.levelBadge::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: none;
+  border-top: none;
+}
+
+.levelNum {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--ember2);
+  line-height: 1;
+}
+
+.levelWord {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.levelTitleDisplay {
+  flex: 1;
+}
+
+.currentTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: var(--ember2);
+  display: block;
+}
+
+.nextLevelHint {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+.abilitiesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1.5rem;
+}
+
+.ability {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ability.locked {
+  opacity: 0.4;
+}
+
+.ability.unlocked {
+  border-color: rgba(249, 115, 22, 0.4);
+  background: rgba(249, 115, 22, 0.05);
+}
+
+.ability.unlocked::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--ember2), var(--ember));
+}
+
+.abilityIcon {
+  font-size: 1.3rem;
+  width: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.abilityInfo {
+  flex: 1;
+}
+
+.abilityName {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: var(--ember3);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.ability.locked .abilityName {
+  color: var(--muted);
+}
+
+.abilityDesc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.abilityLevel {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

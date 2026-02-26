@@ -1,0 +1,346 @@
+:root {
+  --bg2: #13100a;
+  --surface: #1a1510;
+  --border: #3d3020;
+  --border2: #5a4530;
+  --ember: #f97316;
+  --ember2: #fbbf24;
+  --blood: #dc2626;
+  --ice: #67e8f9;
+  --violet: #a78bfa;
+  --sage: #4ade80;
+  --text: #e8d5b0;
+  --muted: #8a7055;
+  --dim: #5a4535;
+}
+
+.acts {
+  padding: 0 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.actCard {
+  border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease backwards;
+}
+
+.actCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+}
+
+.actI::before {
+  background: linear-gradient(180deg, var(--ice), var(--violet));
+}
+
+.actII::before {
+  background: linear-gradient(180deg, var(--violet), var(--blood));
+}
+
+.actIII::before {
+  background: linear-gradient(180deg, var(--ember), var(--ember2));
+}
+
+.actIV::before {
+  background: linear-gradient(180deg, var(--ember2), var(--sage));
+}
+
+.actHeader {
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+.actHeader:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.actRoman {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--ember);
+  width: 2rem;
+  flex-shrink: 0;
+  text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+}
+
+.actInfo {
+  flex: 1;
+}
+
+.actName {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+}
+
+.actSubtitle {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.actXpBadge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ember2);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.actProgressRing {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.actProgressRing svg {
+  transform: rotate(-90deg);
+}
+
+.ringBg {
+  fill: none;
+  stroke: var(--border2);
+  stroke-width: 3;
+}
+
+.ringFill {
+  fill: none;
+  stroke: var(--ember);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.ringText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+}
+
+.actArrow {
+  color: var(--dim);
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+}
+
+.actArrow.open {
+  transform: rotate(90deg);
+}
+
+.actBody {
+  border-top: 1px solid var(--border);
+}
+
+.actLore {
+  padding: 1rem 1.5rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.actLore::before {
+  content: '" ';
+  color: var(--ember);
+  font-size: 1.2rem;
+}
+
+.actLore::after {
+  content: ' "';
+  color: var(--ember);
+  font-size: 1.2rem;
+}
+
+.quests {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quest {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.quest:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--border);
+}
+
+.quest.boss {
+  border-color: rgba(220, 38, 38, 0.2);
+  background: rgba(220, 38, 38, 0.04);
+  margin-top: 0.5rem;
+}
+
+.quest.boss:hover {
+  border-color: rgba(220, 38, 38, 0.5);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.quest.done {
+  opacity: 0.45;
+}
+
+.quest.done .questTitle {
+  text-decoration: line-through;
+}
+
+.questCheckbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border2);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-size: 0.7rem;
+}
+
+.quest.boss .questCheckbox {
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+.quest.done .questCheckbox {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: black;
+}
+
+.questContent {
+  flex: 1;
+}
+
+.questTitle {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.quest.boss .questTitle {
+  color: #fca5a5;
+}
+
+.questMeta {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.qTag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 1px;
+  letter-spacing: 0.05em;
+}
+
+.qTool {
+  color: var(--ice);
+  background: rgba(103, 232, 249, 0.08);
+  border: 1px solid rgba(103, 232, 249, 0.15);
+}
+
+.qTime {
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.qXp {
+  color: var(--ember2);
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.qBoss {
+  color: #fca5a5;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.bossSkull {
+  font-size: 1rem;
+  margin-right: 0.25rem;
+}
+
+.actReward {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: rgba(249, 115, 22, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rewardIcon {
+  font-size: 1.4rem;
+}
+
+.rewardText {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+.rewardTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: var(--ember2);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.rewardDesc {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.82rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
