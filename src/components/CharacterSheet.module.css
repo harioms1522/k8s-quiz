@@ -1,17 +1,3 @@
-:root {
-  --bg: #0d0a06;
-  --bg2: #13100a;
-  --surface: #1a1510;
-  --surface2: #221c14;
-  --border: #3d3020;
-  --border2: #5a4530;
-  --ember: #f97316;
-  --ember2: #fbbf24;
-  --ember3: #fde68a;
-  --muted: #8a7055;
-  --dim: #5a4535;
-}
-
 .charSheet {
   background: var(--surface);
   border: 1px solid var(--border2);
@@ -120,7 +106,7 @@
 
 .xpFill {
   height: 100%;
-  background: linear-gradient(90deg, #c2410c, var(--ember), var(--ember2));
+  background: linear-gradient(90deg, var(--ember-dark), var(--ember), var(--ember2));
   transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
@@ -237,8 +223,8 @@
 }
 
 .ability.unlocked {
-  border-color: rgba(249, 115, 22, 0.4);
-  background: rgba(249, 115, 22, 0.05);
+  border-color: rgba(var(--ember-rgb), 0.4);
+  background: rgba(var(--ember-rgb), 0.05);
 }
 
 .ability.unlocked::before {

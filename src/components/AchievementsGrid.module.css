@@ -1,12 +1,3 @@
-:root {
-  --bg2: #13100a;
-  --border: #3d3020;
-  --border2: #5a4530;
-  --ember2: #fbbf24;
-  --muted: #8a7055;
-  --dim: #5a4535;
-}
-
 .achievementsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -35,8 +26,8 @@
 }
 
 .achievement.earned {
-  border-color: rgba(251, 191, 36, 0.35);
-  background: rgba(251, 191, 36, 0.05);
+  border-color: rgba(var(--ember2-rgb), 0.35);
+  background: rgba(var(--ember2-rgb), 0.05);
 }
 
 .achIcon {

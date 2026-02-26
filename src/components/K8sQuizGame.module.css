@@ -1,22 +1,3 @@
-:root {
-  --bg: #0d0a06;
-  --bg2: #13100a;
-  --surface: #1a1510;
-  --surface2: #221c14;
-  --border: #3d3020;
-  --border2: #5a4530;
-  --ember: #f97316;
-  --ember2: #fbbf24;
-  --ember3: #fde68a;
-  --blood: #dc2626;
-  --sage: #4ade80;
-  --ice: #67e8f9;
-  --violet: #a78bfa;
-  --text: #e8d5b0;
-  --muted: #8a7055;
-  --dim: #5a4535;
-}
-
 .app {
   background: var(--bg);
   color: var(--text);
@@ -48,7 +29,7 @@
 .levelupOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(249, 115, 22, 0.15);
+  background: rgba(var(--ember-rgb), 0.15);
   pointer-events: none;
   z-index: 9998;
   animation: levelFlash 1.5s ease forwards;
@@ -66,7 +47,7 @@
   text-align: center;
   padding: 5rem 2rem 4rem;
   border-bottom: 1px solid var(--border);
-  background: radial-gradient(ellipse at 50% 100%, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 100%, rgba(var(--ember-rgb), 0.12) 0%, transparent 70%);
   overflow: hidden;
 }
 
@@ -103,12 +84,12 @@
   font-size: clamp(2.2rem, 6vw, 4.5rem);
   font-weight: 900;
   line-height: 1;
-  background: linear-gradient(180deg, var(--ember3) 0%, var(--ember) 60%, #c2410c 100%);
+  background: linear-gradient(180deg, var(--ember3) 0%, var(--ember) 60%, var(--ember-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.4));
+  filter: drop-shadow(0 0 30px rgba(var(--ember-rgb), 0.4));
 }
 
 .heroSubtitle {
@@ -133,6 +114,6 @@
   font-size: 0.8rem;
   font-style: italic;
   border-top: 1px solid var(--border);
-  background: radial-gradient(ellipse at 50% 100%, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 100%, rgba(var(--ember-rgb), 0.05) 0%, transparent 70%);
 }
 

@@ -1,3 +1,36 @@
+/*
+ * Default CSS variables — Ember Forge fallback.
+ * These are overridden at runtime by ThemeProvider via themeConfig.js.
+ */
+:root {
+  --bg:              #0d0a06;
+  --bg2:             #13100a;
+  --surface:         #1a1510;
+  --surface2:        #221c14;
+  --border:          #3d3020;
+  --border2:         #5a4530;
+  --ember:           #f97316;
+  --ember2:          #fbbf24;
+  --ember3:          #fde68a;
+  --ember-dark:      #c2410c;
+  --blood:           #dc2626;
+  --blood-light:     #f87171;
+  --blood-pale:      #fca5a5;
+  --sage:            #4ade80;
+  --sage-bright:     #22c55e;
+  --ice:             #67e8f9;
+  --violet:          #a78bfa;
+  --text:            #e8d5b0;
+  --muted:           #8a7055;
+  --dim:             #5a4535;
+  --ember-rgb:       249, 115, 22;
+  --ember2-rgb:      251, 191, 36;
+  --sage-rgb:        74, 222, 128;
+  --blood-rgb:       220, 38, 38;
+  --blood-light-rgb: 248, 113, 113;
+  --ice-rgb:         103, 232, 249;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,4 +47,3 @@ body {
 code {
   font-family: 'Share Tech Mono', monospace;
 }
-

@@ -1,17 +1,3 @@
-:root {
-  --bg: #0d0a06;
-  --bg2: #13100a;
-  --surface: #1a1510;
-  --surface2: #221c14;
-  --border: #3d3020;
-  --border2: #5a4530;
-  --ember: #f97316;
-  --ember2: #fbbf24;
-  --sage: #4ade80;
-  --muted: #8a7055;
-  --dim: #5a4535;
-}
-
 .quizBackdrop {
   position: fixed;
   inset: 0;
@@ -110,20 +96,20 @@
 
 .tierBadge.beginner {
   color: var(--sage);
-  border-color: rgba(74, 222, 128, 0.3);
-  background: rgba(74, 222, 128, 0.06);
+  border-color: rgba(var(--sage-rgb), 0.3);
+  background: rgba(var(--sage-rgb), 0.06);
 }
 
 .tierBadge.intermediate {
   color: var(--ember2);
-  border-color: rgba(251, 191, 36, 0.3);
-  background: rgba(251, 191, 36, 0.06);
+  border-color: rgba(var(--ember2-rgb), 0.3);
+  background: rgba(var(--ember2-rgb), 0.06);
 }
 
 .tierBadge.advanced {
-  color: #f87171;
-  border-color: rgba(248, 113, 113, 0.3);
-  background: rgba(248, 113, 113, 0.06);
+  color: var(--blood-light);
+  border-color: rgba(var(--blood-light-rgb), 0.3);
+  background: rgba(var(--blood-light-rgb), 0.06);
 }
 
 .quizScoreDisplay {
@@ -210,13 +196,13 @@
 }
 
 .questionBlock.correct {
-  border-color: rgba(74, 222, 128, 0.4);
-  background: rgba(74, 222, 128, 0.04);
+  border-color: rgba(var(--sage-rgb), 0.4);
+  background: rgba(var(--sage-rgb), 0.04);
 }
 
 .questionBlock.wrong {
-  border-color: rgba(248, 113, 113, 0.4);
-  background: rgba(248, 113, 113, 0.04);
+  border-color: rgba(var(--blood-light-rgb), 0.4);
+  background: rgba(var(--blood-light-rgb), 0.04);
 }
 
 .qTierLabel {
@@ -237,7 +223,7 @@
 }
 
 .qTierLabel.advanced {
-  color: #f87171;
+  color: var(--blood-light);
 }
 
 .qNumber {
@@ -282,19 +268,19 @@
 .qOption.selected {
   border-color: var(--ember);
   color: var(--text);
-  background: rgba(249, 115, 22, 0.06);
+  background: rgba(var(--ember-rgb), 0.06);
 }
 
 .qOption.correctAns {
   border-color: var(--sage) !important;
   color: var(--sage) !important;
-  background: rgba(74, 222, 128, 0.08) !important;
+  background: rgba(var(--sage-rgb), 0.08) !important;
 }
 
 .qOption.wrongAns {
-  border-color: #f87171 !important;
-  color: #f87171 !important;
-  background: rgba(248, 113, 113, 0.08) !important;
+  border-color: var(--blood-light) !important;
+  color: var(--blood-light) !important;
+  background: rgba(var(--blood-light-rgb), 0.08) !important;
 }
 
 .qOption.disabled {
@@ -330,7 +316,7 @@
 }
 
 .qExplanation.wrongExp {
-  border-color: #f87171;
+  border-color: var(--blood-light);
 }
 
 .quizFooter {
@@ -357,7 +343,7 @@
 }
 
 .quizResultMsg.fail {
-  color: #f87171;
+  color: var(--blood-light);
 }
 
 .quizResultMsg.pending {
@@ -396,8 +382,8 @@
 }
 
 .quizBtnComplete:hover {
-  background: #22c55e;
-  border-color: #22c55e;
+  background: var(--sage-bright);
+  border-color: var(--sage-bright);
 }
 
 .quizBtnComplete.show {
@@ -406,12 +392,12 @@
 
 .quizBtnRetry {
   color: var(--ember2);
-  border-color: rgba(251, 191, 36, 0.4);
+  border-color: rgba(var(--ember2-rgb), 0.4);
   display: none;
 }
 
 .quizBtnRetry:hover {
-  background: rgba(251, 191, 36, 0.08);
+  background: rgba(var(--ember2-rgb), 0.08);
 }
 
 .quizBtnRetry.show {
