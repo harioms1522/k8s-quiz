@@ -1,5 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -25,9 +26,10 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
+    json(),
     resolve({
       browser: true,
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.json'],
     }),
     babel({
       babelHelpers: 'bundled',
@@ -43,11 +45,7 @@ export default {
       minimize: true,
       auto: true,
     }),
-    copy({
-      targets: [
-        { src: 'public/quiz_game_data.json', dest: 'dist' },
-      ],
-    }),
+    // Quiz data is now bundled, no need to copy separately
   ],
   external: ['react', 'react-dom'],
 };

@@ -8,26 +8,9 @@
 npm install k8s-quiz-game
 ```
 
-### 2. Copy Quiz Data File
+### 2. Use in Your Component
 
-The component needs the quiz data file in your public folder. Copy it after installation:
-
-**For Create React App / Vite:**
-```bash
-cp node_modules/k8s-quiz-game/dist/quiz_game_data.json public/quiz_game_data.json
-```
-
-**For Next.js:**
-```bash
-cp node_modules/k8s-quiz-game/dist/quiz_game_data.json public/quiz_game_data.json
-```
-
-**Windows (PowerShell):**
-```powershell
-Copy-Item node_modules\k8s-quiz-game\dist\quiz_game_data.json public\quiz_game_data.json
-```
-
-### 3. Use in Your Component
+**No additional setup needed!** The quiz data is bundled with the component.
 
 ```jsx
 import React from 'react';
@@ -56,10 +39,7 @@ cd my-app
 # Install package
 npm install k8s-quiz-game
 
-# Copy quiz data
-cp node_modules/k8s-quiz-game/dist/quiz_game_data.json public/
-
-# Use in src/App.js
+# That's it! Quiz data is bundled - no copying needed.
 ```
 
 ```jsx
@@ -89,8 +69,7 @@ cd my-app
 # Install package
 npm install k8s-quiz-game
 
-# Copy quiz data
-cp node_modules/k8s-quiz-game/dist/quiz_game_data.json public/
+# Quiz data is bundled - no setup needed!
 ```
 
 ```jsx
@@ -123,8 +102,7 @@ npm install
 # Install package
 npm install k8s-quiz-game
 
-# Copy quiz data
-cp node_modules/k8s-quiz-game/dist/quiz_game_data.json public/
+# Quiz data is automatically bundled!
 ```
 
 ```jsx
@@ -149,9 +127,9 @@ export default App;
 **Problem**: Quiz modal shows "Questions not found" error.
 
 **Solution**: 
-1. Verify `quiz_game_data.json` is in your `public` folder
-2. Check that the file is accessible at `/quiz_game_data.json` in your browser
-3. For Next.js, ensure the file is in the `public` directory (not `public/quiz_game_data.json`)
+1. The quiz data is now bundled with the component - no manual setup needed
+2. If you see this error, try reinstalling: `npm uninstall k8s-quiz-game && npm install k8s-quiz-game`
+3. Check browser console for any import errors
 
 ### Styles not working
 

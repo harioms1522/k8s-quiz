@@ -50,7 +50,7 @@ function App() {
 }
 ```
 
-**Important**: Copy `quiz_game_data.json` from `node_modules/k8s-quiz-game/dist/` to your `public/` folder.
+**That's it!** The quiz data is bundled with the component - no additional setup needed.
 
 ### Building the Package
 

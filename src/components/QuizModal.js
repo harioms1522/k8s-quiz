@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ACTS } from '../data/gameData';
+import quizData from '../data/quizData';
 import styles from './QuizModal.module.css';
 
 const QuizModal = ({ questId, onClose, onComplete }) => {
@@ -7,56 +8,32 @@ const QuizModal = ({ questId, onClose, onComplete }) => {
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState({});
   const [error, setError] = useState(null);
-  const [quizData, setQuizData] = useState(null);
 
   const quest = ACTS.flatMap(a => a.quests).find(q => q.id === questId);
 
-  useEffect(() => {
-    loadQuizData();
-  }, []);
-
   const loadQuestions = useCallback(() => {
-    if (!quizData) return;
-
     setLoading(true);
     setError(null);
     setSubmitted({});
 
     try {
-      // Load questions from JSON file
-      if (quizData[questId] && quizData[questId].questions) {
+      // Quiz data is bundled with the component - no fetch needed!
+      if (quizData && quizData[questId] && quizData[questId].questions) {
         setQuestions(quizData[questId].questions);
         setLoading(false);
       } else {
-        setError(`Questions not found for quest "${questId}". Please ensure quiz_game_data.json contains data for this quest.`);
+        setError(`Questions not found for quest "${questId}".`);
         setLoading(false);
       }
     } catch (err) {
       setError(err.message);
       setLoading(false);
     }
-  }, [quizData, questId]);
+  }, [questId]);
 
   useEffect(() => {
-    if (quizData) {
-      loadQuestions();
-    }
-  }, [questId, quizData, loadQuestions]);
-
-  const loadQuizData = async () => {
-    try {
-      const response = await fetch('/quiz_game_data.json');
-      if (!response.ok) {
-        throw new Error('Failed to load quiz data');
-      }
-      const data = await response.json();
-      setQuizData(data);
-    } catch (err) {
-      console.error('Error loading quiz data:', err);
-      setError('Failed to load quiz data. Please ensure quiz_game_data.json is in the public folder.');
-      setLoading(false);
-    }
-  };
+    loadQuestions();
+  }, [loadQuestions]);
 
   const selectOption = (qIdx, optIdx) => {
     if (submitted[qIdx] !== undefined) return; // already answered
