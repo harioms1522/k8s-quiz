@@ -335,7 +335,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$6 = ":root{--bg:#0d0a06;--bg2:#13100a;--surface:#1a1510;--surface2:#221c14;--border:#3d3020;--border2:#5a4530;--ember:#f97316;--ember2:#fbbf24;--ember3:#fde68a;--muted:#8a7055;--dim:#5a4535}.CharacterSheet-module__charSheet___rHsP-{animation:CharacterSheet-module__fadeIn___LE9LW .4s ease backwards;background:var(--surface);border:1px solid var(--border2);margin:3rem auto;max-width:900px;padding:0 1.5rem;position:relative}.CharacterSheet-module__charSheet___rHsP-:after,.CharacterSheet-module__charSheet___rHsP-:before{background:var(--bg);color:var(--ember);content:\"◆\";font-size:1rem;padding:0 .5rem;position:absolute;top:-.6rem}.CharacterSheet-module__charSheet___rHsP-:before{left:2rem}.CharacterSheet-module__charSheet___rHsP-:after{right:2rem}.CharacterSheet-module__sectionTitle___TfhZa{border-bottom:1px solid var(--border);color:var(--ember);font-family:Cinzel,serif;font-size:.7rem;letter-spacing:.25em;margin-bottom:1.5rem;padding:1.2rem 0 1rem;text-transform:uppercase}.CharacterSheet-module__charGrid___o-yKD{display:grid;gap:1.5rem;grid-template-columns:1fr 1fr;padding-bottom:1.5rem}@media (max-width:600px){.CharacterSheet-module__charGrid___o-yKD{grid-template-columns:1fr}}.CharacterSheet-module__charStat___h8d7Q{display:flex;flex-direction:column;gap:.2rem}.CharacterSheet-module__statLabel___0tOMn{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}.CharacterSheet-module__statValue___uyG--{color:var(--ember2);font-family:Cinzel,serif;font-size:1.1rem}.CharacterSheet-module__xpSection___iT36l{border-top:1px solid var(--border);padding:1.5rem 0}.CharacterSheet-module__xpHeader___u95qq{align-items:baseline;display:flex;justify-content:space-between;margin-bottom:.6rem}.CharacterSheet-module__xpLabel___hODiz{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.15em}.CharacterSheet-module__xpNumbers___RuFGn{color:var(--ember2);font-family:Share Tech Mono,monospace;font-size:.85rem}.CharacterSheet-module__xpTrack___6Ouax{background:var(--bg);border:1px solid var(--border2);border-radius:1px;height:10px;overflow:hidden}.CharacterSheet-module__xpFill___PczbG{background:linear-gradient(90deg,#c2410c,var(--ember),var(--ember2));height:100%;position:relative;transition:width .8s cubic-bezier(.22,1,.36,1)}.CharacterSheet-module__xpFill___PczbG:after{background:#fff;bottom:0;content:\"\";filter:blur(2px);opacity:.6;position:absolute;right:0;top:0;width:4px}.CharacterSheet-module__levelDisplay___Js4RX{align-items:center;display:flex;gap:1.5rem;margin-top:1rem}.CharacterSheet-module__levelBadge___ME92c{align-items:center;background:var(--surface2);border:2px solid var(--ember);display:flex;flex-direction:column;flex-shrink:0;height:64px;justify-content:center;position:relative;width:64px}.CharacterSheet-module__levelBadge___ME92c:after,.CharacterSheet-module__levelBadge___ME92c:before{border:1px solid var(--ember2);content:\"\";height:8px;position:absolute;width:8px}.CharacterSheet-module__levelBadge___ME92c:before{border-bottom:none;border-right:none;left:-4px;top:-4px}.CharacterSheet-module__levelBadge___ME92c:after{border-left:none;border-top:none;bottom:-4px;right:-4px}.CharacterSheet-module__levelNum___1ld5k{color:var(--ember2);font-family:Cinzel,serif;font-size:1.8rem;font-weight:900;line-height:1}.CharacterSheet-module__levelWord___VddZS{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.5rem;letter-spacing:.1em}.CharacterSheet-module__levelTitleDisplay___ivEER{flex:1}.CharacterSheet-module__currentTitle___6M7Pm{color:var(--ember2);display:block;font-family:Cinzel,serif;font-size:1.3rem}.CharacterSheet-module__nextLevelHint___3ptRx{color:var(--muted);font-size:.82rem;font-style:italic;margin-top:.2rem}.CharacterSheet-module__abilitiesGrid___t7Jmt{display:flex;flex-direction:column;gap:.6rem;padding-bottom:1.5rem}.CharacterSheet-module__ability___kVg4J{align-items:center;background:var(--bg2);border:1px solid var(--border);display:flex;gap:1rem;overflow:hidden;padding:.8rem 1rem;position:relative;transition:all .2s}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__locked___RsPeF{opacity:.4}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__unlocked___mY-cT{background:#f973160d;border-color:#f9731666}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__unlocked___mY-cT:before{background:linear-gradient(180deg,var(--ember2),var(--ember));bottom:0;content:\"\";left:0;position:absolute;top:0;width:3px}.CharacterSheet-module__abilityIcon___rz6n9{flex-shrink:0;font-size:1.3rem;text-align:center;width:2rem}.CharacterSheet-module__abilityInfo___Goh5y{flex:1}.CharacterSheet-module__abilityName___gMnd7{color:var(--ember3);display:block;font-family:Cinzel,serif;font-size:.9rem;margin-bottom:.1rem}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__locked___RsPeF .CharacterSheet-module__abilityName___gMnd7{color:var(--muted)}.CharacterSheet-module__abilityDesc___88H9f{color:var(--muted);font-size:.82rem;font-style:italic}.CharacterSheet-module__abilityLevel___7OHW1{color:var(--dim);font-family:Share Tech Mono,monospace;font-size:.6rem;letter-spacing:.1em}@keyframes CharacterSheet-module__fadeIn___LE9LW{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";
+var css_248z$6 = ".CharacterSheet-module__charSheet___rHsP-{animation:CharacterSheet-module__fadeIn___LE9LW .4s ease backwards;background:var(--surface);border:1px solid var(--border2);margin:3rem auto;max-width:900px;padding:0 1.5rem;position:relative}.CharacterSheet-module__charSheet___rHsP-:after,.CharacterSheet-module__charSheet___rHsP-:before{background:var(--bg);color:var(--ember);content:\"◆\";font-size:1rem;padding:0 .5rem;position:absolute;top:-.6rem}.CharacterSheet-module__charSheet___rHsP-:before{left:2rem}.CharacterSheet-module__charSheet___rHsP-:after{right:2rem}.CharacterSheet-module__sectionTitle___TfhZa{border-bottom:1px solid var(--border);color:var(--ember);font-family:Cinzel,serif;font-size:.7rem;letter-spacing:.25em;margin-bottom:1.5rem;padding:1.2rem 0 1rem;text-transform:uppercase}.CharacterSheet-module__charGrid___o-yKD{display:grid;gap:1.5rem;grid-template-columns:1fr 1fr;padding-bottom:1.5rem}@media (max-width:600px){.CharacterSheet-module__charGrid___o-yKD{grid-template-columns:1fr}}.CharacterSheet-module__charStat___h8d7Q{display:flex;flex-direction:column;gap:.2rem}.CharacterSheet-module__statLabel___0tOMn{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}.CharacterSheet-module__statValue___uyG--{color:var(--ember2);font-family:Cinzel,serif;font-size:1.1rem}.CharacterSheet-module__xpSection___iT36l{border-top:1px solid var(--border);padding:1.5rem 0}.CharacterSheet-module__xpHeader___u95qq{align-items:baseline;display:flex;justify-content:space-between;margin-bottom:.6rem}.CharacterSheet-module__xpLabel___hODiz{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.15em}.CharacterSheet-module__xpNumbers___RuFGn{color:var(--ember2);font-family:Share Tech Mono,monospace;font-size:.85rem}.CharacterSheet-module__xpTrack___6Ouax{background:var(--bg);border:1px solid var(--border2);border-radius:1px;height:10px;overflow:hidden}.CharacterSheet-module__xpFill___PczbG{background:linear-gradient(90deg,var(--ember-dark),var(--ember),var(--ember2));height:100%;position:relative;transition:width .8s cubic-bezier(.22,1,.36,1)}.CharacterSheet-module__xpFill___PczbG:after{background:#fff;bottom:0;content:\"\";filter:blur(2px);opacity:.6;position:absolute;right:0;top:0;width:4px}.CharacterSheet-module__levelDisplay___Js4RX{align-items:center;display:flex;gap:1.5rem;margin-top:1rem}.CharacterSheet-module__levelBadge___ME92c{align-items:center;background:var(--surface2);border:2px solid var(--ember);display:flex;flex-direction:column;flex-shrink:0;height:64px;justify-content:center;position:relative;width:64px}.CharacterSheet-module__levelBadge___ME92c:after,.CharacterSheet-module__levelBadge___ME92c:before{border:1px solid var(--ember2);content:\"\";height:8px;position:absolute;width:8px}.CharacterSheet-module__levelBadge___ME92c:before{border-bottom:none;border-right:none;left:-4px;top:-4px}.CharacterSheet-module__levelBadge___ME92c:after{border-left:none;border-top:none;bottom:-4px;right:-4px}.CharacterSheet-module__levelNum___1ld5k{color:var(--ember2);font-family:Cinzel,serif;font-size:1.8rem;font-weight:900;line-height:1}.CharacterSheet-module__levelWord___VddZS{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.5rem;letter-spacing:.1em}.CharacterSheet-module__levelTitleDisplay___ivEER{flex:1}.CharacterSheet-module__currentTitle___6M7Pm{color:var(--ember2);display:block;font-family:Cinzel,serif;font-size:1.3rem}.CharacterSheet-module__nextLevelHint___3ptRx{color:var(--muted);font-size:.82rem;font-style:italic;margin-top:.2rem}.CharacterSheet-module__abilitiesGrid___t7Jmt{display:flex;flex-direction:column;gap:.6rem;padding-bottom:1.5rem}.CharacterSheet-module__ability___kVg4J{align-items:center;background:var(--bg2);border:1px solid var(--border);display:flex;gap:1rem;overflow:hidden;padding:.8rem 1rem;position:relative;transition:all .2s}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__locked___RsPeF{opacity:.4}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__unlocked___mY-cT{background:rgba(var(--ember-rgb),.05);border-color:rgba(var(--ember-rgb),.4)}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__unlocked___mY-cT:before{background:linear-gradient(180deg,var(--ember2),var(--ember));bottom:0;content:\"\";left:0;position:absolute;top:0;width:3px}.CharacterSheet-module__abilityIcon___rz6n9{flex-shrink:0;font-size:1.3rem;text-align:center;width:2rem}.CharacterSheet-module__abilityInfo___Goh5y{flex:1}.CharacterSheet-module__abilityName___gMnd7{color:var(--ember3);display:block;font-family:Cinzel,serif;font-size:.9rem;margin-bottom:.1rem}.CharacterSheet-module__ability___kVg4J.CharacterSheet-module__locked___RsPeF .CharacterSheet-module__abilityName___gMnd7{color:var(--muted)}.CharacterSheet-module__abilityDesc___88H9f{color:var(--muted);font-size:.82rem;font-style:italic}.CharacterSheet-module__abilityLevel___7OHW1{color:var(--dim);font-family:Share Tech Mono,monospace;font-size:.6rem;letter-spacing:.1em}@keyframes CharacterSheet-module__fadeIn___LE9LW{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";
 var styles$6 = {"charSheet":"CharacterSheet-module__charSheet___rHsP-","sectionTitle":"CharacterSheet-module__sectionTitle___TfhZa","charGrid":"CharacterSheet-module__charGrid___o-yKD","charStat":"CharacterSheet-module__charStat___h8d7Q","statLabel":"CharacterSheet-module__statLabel___0tOMn","statValue":"CharacterSheet-module__statValue___uyG--","xpSection":"CharacterSheet-module__xpSection___iT36l","xpHeader":"CharacterSheet-module__xpHeader___u95qq","xpLabel":"CharacterSheet-module__xpLabel___hODiz","xpNumbers":"CharacterSheet-module__xpNumbers___RuFGn","xpTrack":"CharacterSheet-module__xpTrack___6Ouax","xpFill":"CharacterSheet-module__xpFill___PczbG","levelDisplay":"CharacterSheet-module__levelDisplay___Js4RX","levelBadge":"CharacterSheet-module__levelBadge___ME92c","levelNum":"CharacterSheet-module__levelNum___1ld5k","levelWord":"CharacterSheet-module__levelWord___VddZS","levelTitleDisplay":"CharacterSheet-module__levelTitleDisplay___ivEER","currentTitle":"CharacterSheet-module__currentTitle___6M7Pm","nextLevelHint":"CharacterSheet-module__nextLevelHint___3ptRx","abilitiesGrid":"CharacterSheet-module__abilitiesGrid___t7Jmt","ability":"CharacterSheet-module__ability___kVg4J","locked":"CharacterSheet-module__locked___RsPeF","unlocked":"CharacterSheet-module__unlocked___mY-cT","abilityIcon":"CharacterSheet-module__abilityIcon___rz6n9","abilityInfo":"CharacterSheet-module__abilityInfo___Goh5y","abilityName":"CharacterSheet-module__abilityName___gMnd7","abilityDesc":"CharacterSheet-module__abilityDesc___88H9f","abilityLevel":"CharacterSheet-module__abilityLevel___7OHW1"};
 styleInject(css_248z$6);
 
@@ -430,7 +430,7 @@ const CharacterSheet = ({
   })));
 };
 
-var css_248z$5 = ":root{--bg2:#13100a;--surface:#1a1510;--border:#3d3020;--border2:#5a4530;--ember:#f97316;--ember2:#fbbf24;--blood:#dc2626;--ice:#67e8f9;--violet:#a78bfa;--sage:#4ade80;--text:#e8d5b0;--muted:#8a7055;--dim:#5a4535}.ActsContainer-module__acts___-2jhN{margin:0 auto 3rem;max-width:900px;padding:0 1.5rem}.ActsContainer-module__actCard___sFCzt{animation:ActsContainer-module__fadeIn___OtlqY .4s ease backwards;background:var(--surface);border:1px solid var(--border);margin-bottom:1.5rem;overflow:hidden;position:relative}.ActsContainer-module__actCard___sFCzt:before{bottom:0;content:\"\";left:0;position:absolute;top:0;width:3px}.ActsContainer-module__actI___in-XN:before{background:linear-gradient(180deg,var(--ice),var(--violet))}.ActsContainer-module__actII___qR0tX:before{background:linear-gradient(180deg,var(--violet),var(--blood))}.ActsContainer-module__actIII___89KBy:before{background:linear-gradient(180deg,var(--ember),var(--ember2))}.ActsContainer-module__actIV___e-SBR:before{background:linear-gradient(180deg,var(--ember2),var(--sage))}.ActsContainer-module__actHeader___-IzPh{align-items:center;cursor:pointer;display:flex;gap:1rem;padding:1.2rem 1.5rem;user-select:none}.ActsContainer-module__actHeader___-IzPh:hover{background:#ffffff05}.ActsContainer-module__actRoman___OmBbk{color:var(--ember);flex-shrink:0;font-family:Cinzel,serif;font-size:1.4rem;font-weight:900;text-shadow:0 0 20px #f9731680;width:2rem}.ActsContainer-module__actInfo___K1Swz{flex:1}.ActsContainer-module__actName___Jvr5H{color:var(--text);display:block;font-family:Cinzel,serif;font-size:1rem;font-weight:700}.ActsContainer-module__actSubtitle___7hgND{color:var(--muted);font-size:.82rem;font-style:italic}.ActsContainer-module__actXpBadge___ktlTA{border:1px solid #fbbf244d;color:var(--ember2);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.1em;padding:.2rem .6rem;white-space:nowrap}.ActsContainer-module__actProgressRing___-l0qW{flex-shrink:0;height:40px;position:relative;width:40px}.ActsContainer-module__actProgressRing___-l0qW svg{transform:rotate(-90deg)}.ActsContainer-module__ringBg___PwBu-{fill:none;stroke:var(--border2);stroke-width:3}.ActsContainer-module__ringFill___jE1E2{fill:none;stroke:var(--ember);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .6s ease}.ActsContainer-module__ringText___g-fyW{align-items:center;color:var(--muted);display:flex;font-family:Share Tech Mono,monospace;font-size:.6rem;inset:0;justify-content:center;position:absolute}.ActsContainer-module__actArrow___mUdBE{color:var(--dim);font-size:.7rem;transition:transform .2s}.ActsContainer-module__actArrow___mUdBE.ActsContainer-module__open___81kEh{transform:rotate(90deg)}.ActsContainer-module__actBody___owvV9{border-top:1px solid var(--border)}.ActsContainer-module__actLore___1Sgae{background:var(--bg2);border-bottom:1px solid var(--border);color:var(--muted);font-size:.88rem;font-style:italic;line-height:1.7;padding:1rem 1.5rem}.ActsContainer-module__actLore___1Sgae:before{color:var(--ember);content:'\" ';font-size:1.2rem}.ActsContainer-module__actLore___1Sgae:after{color:var(--ember);content:' \"';font-size:1.2rem}.ActsContainer-module__quests___dOe1j{display:flex;flex-direction:column;gap:.5rem;padding:1rem 1.5rem}.ActsContainer-module__quest___UIJa9{align-items:flex-start;border:1px solid #0000;cursor:pointer;display:flex;gap:1rem;padding:.75rem 1rem;position:relative;transition:all .15s}.ActsContainer-module__quest___UIJa9:hover{background:#ffffff05;border-color:var(--border)}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM-{background:#dc26260a;border-color:#dc262633;margin-top:.5rem}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM-:hover{background:#dc262614;border-color:#dc262680}.ActsContainer-module__quest___UIJa9.ActsContainer-module__done___FjKwJ{opacity:.45}.ActsContainer-module__quest___UIJa9.ActsContainer-module__done___FjKwJ .ActsContainer-module__questTitle___O-hvz{text-decoration:line-through}.ActsContainer-module__questCheckbox___UXgP3{align-items:center;border:1.5px solid var(--border2);display:flex;flex-shrink:0;font-size:.7rem;height:18px;justify-content:center;margin-top:2px;transition:all .2s;width:18px}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM- .ActsContainer-module__questCheckbox___UXgP3{border-color:#dc262680}.ActsContainer-module__quest___UIJa9.ActsContainer-module__done___FjKwJ .ActsContainer-module__questCheckbox___UXgP3{background:var(--sage);border-color:var(--sage);color:#000}.ActsContainer-module__questContent___KB81-{flex:1}.ActsContainer-module__questTitle___O-hvz{color:var(--text);font-size:.92rem;line-height:1.4}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM- .ActsContainer-module__questTitle___O-hvz{color:#fca5a5}.ActsContainer-module__questMeta___rdjW5{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}.ActsContainer-module__qTag___6ezAx{border-radius:1px;font-family:Share Tech Mono,monospace;font-size:.6rem;letter-spacing:.05em;padding:.1rem .4rem}.ActsContainer-module__qTool___5aYsp{background:#67e8f914;border:1px solid #67e8f926;color:var(--ice)}.ActsContainer-module__qTime___rK97Z{background:#ffffff0a;border:1px solid var(--border);color:var(--muted)}.ActsContainer-module__qXp___EN6zt{background:#fbbf2414;border:1px solid #fbbf2433;color:var(--ember2)}.ActsContainer-module__qBoss___4H0yr{background:#dc262614;border:1px solid #dc26264d;color:#fca5a5}.ActsContainer-module__bossSkull___GByRr{font-size:1rem;margin-right:.25rem}.ActsContainer-module__actReward___hqMUv{align-items:center;background:#f973160a;border-top:1px solid var(--border);display:flex;gap:1rem;padding:1rem 1.5rem}.ActsContainer-module__rewardIcon___J2UUw{font-size:1.4rem}.ActsContainer-module__rewardText___WiT9M{flex:1;font-size:.85rem}.ActsContainer-module__rewardTitle___WD0OH{color:var(--ember2);display:block;font-family:Cinzel,serif;font-size:.8rem;margin-bottom:.1rem}.ActsContainer-module__rewardDesc___lS92n{color:var(--muted);font-size:.82rem;font-style:italic}@keyframes ActsContainer-module__fadeIn___OtlqY{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";
+var css_248z$5 = ".ActsContainer-module__acts___-2jhN{margin:0 auto 3rem;max-width:900px;padding:0 1.5rem}.ActsContainer-module__actCard___sFCzt{animation:ActsContainer-module__fadeIn___OtlqY .4s ease backwards;background:var(--surface);border:1px solid var(--border);margin-bottom:1.5rem;overflow:hidden;position:relative}.ActsContainer-module__actCard___sFCzt:before{bottom:0;content:\"\";left:0;position:absolute;top:0;width:3px}.ActsContainer-module__actI___in-XN:before{background:linear-gradient(180deg,var(--ice),var(--violet))}.ActsContainer-module__actII___qR0tX:before{background:linear-gradient(180deg,var(--violet),var(--blood))}.ActsContainer-module__actIII___89KBy:before{background:linear-gradient(180deg,var(--ember),var(--ember2))}.ActsContainer-module__actIV___e-SBR:before{background:linear-gradient(180deg,var(--ember2),var(--sage))}.ActsContainer-module__actHeader___-IzPh{align-items:center;cursor:pointer;display:flex;gap:1rem;padding:1.2rem 1.5rem;user-select:none}.ActsContainer-module__actHeader___-IzPh:hover{background:#ffffff05}.ActsContainer-module__actRoman___OmBbk{color:var(--ember);flex-shrink:0;font-family:Cinzel,serif;font-size:1.4rem;font-weight:900;text-shadow:0 0 20px rgba(var(--ember-rgb),.5);width:2rem}.ActsContainer-module__actInfo___K1Swz{flex:1}.ActsContainer-module__actName___Jvr5H{color:var(--text);display:block;font-family:Cinzel,serif;font-size:1rem;font-weight:700}.ActsContainer-module__actSubtitle___7hgND{color:var(--muted);font-size:.82rem;font-style:italic}.ActsContainer-module__actXpBadge___ktlTA{border:1px solid rgba(var(--ember2-rgb),.3);color:var(--ember2);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.1em;padding:.2rem .6rem;white-space:nowrap}.ActsContainer-module__actProgressRing___-l0qW{flex-shrink:0;height:40px;position:relative;width:40px}.ActsContainer-module__actProgressRing___-l0qW svg{transform:rotate(-90deg)}.ActsContainer-module__ringBg___PwBu-{fill:none;stroke:var(--border2);stroke-width:3}.ActsContainer-module__ringFill___jE1E2{fill:none;stroke:var(--ember);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .6s ease}.ActsContainer-module__ringText___g-fyW{align-items:center;color:var(--muted);display:flex;font-family:Share Tech Mono,monospace;font-size:.6rem;inset:0;justify-content:center;position:absolute}.ActsContainer-module__actArrow___mUdBE{color:var(--dim);font-size:.7rem;transition:transform .2s}.ActsContainer-module__actArrow___mUdBE.ActsContainer-module__open___81kEh{transform:rotate(90deg)}.ActsContainer-module__actBody___owvV9{border-top:1px solid var(--border)}.ActsContainer-module__actLore___1Sgae{background:var(--bg2);border-bottom:1px solid var(--border);color:var(--muted);font-size:.88rem;font-style:italic;line-height:1.7;padding:1rem 1.5rem}.ActsContainer-module__actLore___1Sgae:before{color:var(--ember);content:'\" ';font-size:1.2rem}.ActsContainer-module__actLore___1Sgae:after{color:var(--ember);content:' \"';font-size:1.2rem}.ActsContainer-module__quests___dOe1j{display:flex;flex-direction:column;gap:.5rem;padding:1rem 1.5rem}.ActsContainer-module__quest___UIJa9{align-items:flex-start;border:1px solid #0000;cursor:pointer;display:flex;gap:1rem;padding:.75rem 1rem;position:relative;transition:all .15s}.ActsContainer-module__quest___UIJa9:hover{background:#ffffff05;border-color:var(--border)}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM-{background:rgba(var(--blood-rgb),.04);border-color:rgba(var(--blood-rgb),.2);margin-top:.5rem}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM-:hover{background:rgba(var(--blood-rgb),.08);border-color:rgba(var(--blood-rgb),.5)}.ActsContainer-module__quest___UIJa9.ActsContainer-module__done___FjKwJ{opacity:.45}.ActsContainer-module__quest___UIJa9.ActsContainer-module__done___FjKwJ .ActsContainer-module__questTitle___O-hvz{text-decoration:line-through}.ActsContainer-module__questCheckbox___UXgP3{align-items:center;border:1.5px solid var(--border2);display:flex;flex-shrink:0;font-size:.7rem;height:18px;justify-content:center;margin-top:2px;transition:all .2s;width:18px}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM- .ActsContainer-module__questCheckbox___UXgP3{border-color:rgba(var(--blood-rgb),.5)}.ActsContainer-module__quest___UIJa9.ActsContainer-module__done___FjKwJ .ActsContainer-module__questCheckbox___UXgP3{background:var(--sage);border-color:var(--sage);color:#000}.ActsContainer-module__questContent___KB81-{flex:1}.ActsContainer-module__questTitle___O-hvz{color:var(--text);font-size:.92rem;line-height:1.4}.ActsContainer-module__quest___UIJa9.ActsContainer-module__boss___-krM- .ActsContainer-module__questTitle___O-hvz{color:var(--blood-pale)}.ActsContainer-module__questMeta___rdjW5{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}.ActsContainer-module__qTag___6ezAx{border-radius:1px;font-family:Share Tech Mono,monospace;font-size:.6rem;letter-spacing:.05em;padding:.1rem .4rem}.ActsContainer-module__qTool___5aYsp{background:rgba(var(--ice-rgb),.08);border:1px solid rgba(var(--ice-rgb),.15);color:var(--ice)}.ActsContainer-module__qTime___rK97Z{background:#ffffff0a;border:1px solid var(--border);color:var(--muted)}.ActsContainer-module__qXp___EN6zt{background:rgba(var(--ember2-rgb),.08);border:1px solid rgba(var(--ember2-rgb),.2);color:var(--ember2)}.ActsContainer-module__qBoss___4H0yr{background:rgba(var(--blood-rgb),.08);border:1px solid rgba(var(--blood-rgb),.3);color:var(--blood-pale)}.ActsContainer-module__bossSkull___GByRr{font-size:1rem;margin-right:.25rem}.ActsContainer-module__actReward___hqMUv{align-items:center;background:rgba(var(--ember-rgb),.04);border-top:1px solid var(--border);display:flex;gap:1rem;padding:1rem 1.5rem}.ActsContainer-module__rewardIcon___J2UUw{font-size:1.4rem}.ActsContainer-module__rewardText___WiT9M{flex:1;font-size:.85rem}.ActsContainer-module__rewardTitle___WD0OH{color:var(--ember2);display:block;font-family:Cinzel,serif;font-size:.8rem;margin-bottom:.1rem}.ActsContainer-module__rewardDesc___lS92n{color:var(--muted);font-size:.82rem;font-style:italic}@keyframes ActsContainer-module__fadeIn___OtlqY{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";
 var styles$5 = {"acts":"ActsContainer-module__acts___-2jhN","actCard":"ActsContainer-module__actCard___sFCzt","fadeIn":"ActsContainer-module__fadeIn___OtlqY","actI":"ActsContainer-module__actI___in-XN","actII":"ActsContainer-module__actII___qR0tX","actIII":"ActsContainer-module__actIII___89KBy","actIV":"ActsContainer-module__actIV___e-SBR","actHeader":"ActsContainer-module__actHeader___-IzPh","actRoman":"ActsContainer-module__actRoman___OmBbk","actInfo":"ActsContainer-module__actInfo___K1Swz","actName":"ActsContainer-module__actName___Jvr5H","actSubtitle":"ActsContainer-module__actSubtitle___7hgND","actXpBadge":"ActsContainer-module__actXpBadge___ktlTA","actProgressRing":"ActsContainer-module__actProgressRing___-l0qW","ringBg":"ActsContainer-module__ringBg___PwBu-","ringFill":"ActsContainer-module__ringFill___jE1E2","ringText":"ActsContainer-module__ringText___g-fyW","actArrow":"ActsContainer-module__actArrow___mUdBE","open":"ActsContainer-module__open___81kEh","actBody":"ActsContainer-module__actBody___owvV9","actLore":"ActsContainer-module__actLore___1Sgae","quests":"ActsContainer-module__quests___dOe1j","quest":"ActsContainer-module__quest___UIJa9","boss":"ActsContainer-module__boss___-krM-","done":"ActsContainer-module__done___FjKwJ","questTitle":"ActsContainer-module__questTitle___O-hvz","questCheckbox":"ActsContainer-module__questCheckbox___UXgP3","questContent":"ActsContainer-module__questContent___KB81-","questMeta":"ActsContainer-module__questMeta___rdjW5","qTag":"ActsContainer-module__qTag___6ezAx","qTool":"ActsContainer-module__qTool___5aYsp","qTime":"ActsContainer-module__qTime___rK97Z","qXp":"ActsContainer-module__qXp___EN6zt","qBoss":"ActsContainer-module__qBoss___4H0yr","bossSkull":"ActsContainer-module__bossSkull___GByRr","actReward":"ActsContainer-module__actReward___hqMUv","rewardIcon":"ActsContainer-module__rewardIcon___J2UUw","rewardText":"ActsContainer-module__rewardText___WiT9M","rewardTitle":"ActsContainer-module__rewardTitle___WD0OH","rewardDesc":"ActsContainer-module__rewardDesc___lS92n"};
 styleInject(css_248z$5);
 
@@ -551,7 +551,7 @@ const ActsContainer = ({
   }));
 };
 
-var css_248z$4 = ":root{--bg2:#13100a;--border:#3d3020;--border2:#5a4530;--ember2:#fbbf24;--muted:#8a7055;--dim:#5a4535}.AchievementsGrid-module__achievementsGrid___xONZ3{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin:0 auto;max-width:900px;padding-bottom:1.5rem;padding-left:1.5rem;padding-right:1.5rem}.AchievementsGrid-module__achievement___Eayj3{align-items:flex-start;animation:AchievementsGrid-module__fadeIn___N34c1 .4s ease backwards;background:var(--bg2);border:1px solid var(--border);cursor:pointer;display:flex;gap:.75rem;padding:.9rem 1rem;transition:all .2s}.AchievementsGrid-module__achievement___Eayj3:hover{border-color:var(--border2)}.AchievementsGrid-module__achievement___Eayj3.AchievementsGrid-module__earned___J44BS{background:#fbbf240d;border-color:#fbbf2459}.AchievementsGrid-module__achIcon___pw6n9{filter:grayscale(1);flex-shrink:0;font-size:1.4rem;line-height:1;transition:filter .3s}.AchievementsGrid-module__achievement___Eayj3.AchievementsGrid-module__earned___J44BS .AchievementsGrid-module__achIcon___pw6n9{filter:none}.AchievementsGrid-module__achInfo___j2ims{flex:1}.AchievementsGrid-module__achName___KjALR{color:var(--muted);display:block;font-family:Cinzel,serif;font-size:.78rem;margin-bottom:.2rem;transition:color .2s}.AchievementsGrid-module__achievement___Eayj3.AchievementsGrid-module__earned___J44BS .AchievementsGrid-module__achName___KjALR{color:var(--ember2)}.AchievementsGrid-module__achDesc___hEm9S{color:var(--dim);font-size:.75rem;font-style:italic;line-height:1.3}@keyframes AchievementsGrid-module__fadeIn___N34c1{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";
+var css_248z$4 = ".AchievementsGrid-module__achievementsGrid___xONZ3{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin:0 auto;max-width:900px;padding-bottom:1.5rem;padding-left:1.5rem;padding-right:1.5rem}.AchievementsGrid-module__achievement___Eayj3{align-items:flex-start;animation:AchievementsGrid-module__fadeIn___N34c1 .4s ease backwards;background:var(--bg2);border:1px solid var(--border);cursor:pointer;display:flex;gap:.75rem;padding:.9rem 1rem;transition:all .2s}.AchievementsGrid-module__achievement___Eayj3:hover{border-color:var(--border2)}.AchievementsGrid-module__achievement___Eayj3.AchievementsGrid-module__earned___J44BS{background:rgba(var(--ember2-rgb),.05);border-color:rgba(var(--ember2-rgb),.35)}.AchievementsGrid-module__achIcon___pw6n9{filter:grayscale(1);flex-shrink:0;font-size:1.4rem;line-height:1;transition:filter .3s}.AchievementsGrid-module__achievement___Eayj3.AchievementsGrid-module__earned___J44BS .AchievementsGrid-module__achIcon___pw6n9{filter:none}.AchievementsGrid-module__achInfo___j2ims{flex:1}.AchievementsGrid-module__achName___KjALR{color:var(--muted);display:block;font-family:Cinzel,serif;font-size:.78rem;margin-bottom:.2rem;transition:color .2s}.AchievementsGrid-module__achievement___Eayj3.AchievementsGrid-module__earned___J44BS .AchievementsGrid-module__achName___KjALR{color:var(--ember2)}.AchievementsGrid-module__achDesc___hEm9S{color:var(--dim);font-size:.75rem;font-style:italic;line-height:1.3}@keyframes AchievementsGrid-module__fadeIn___N34c1{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";
 var styles$4 = {"achievementsGrid":"AchievementsGrid-module__achievementsGrid___xONZ3","achievement":"AchievementsGrid-module__achievement___Eayj3","earned":"AchievementsGrid-module__earned___J44BS","achIcon":"AchievementsGrid-module__achIcon___pw6n9","achInfo":"AchievementsGrid-module__achInfo___j2ims","achName":"AchievementsGrid-module__achName___KjALR","achDesc":"AchievementsGrid-module__achDesc___hEm9S"};
 styleInject(css_248z$4);
 
@@ -583,7 +583,7 @@ const AchievementsGrid = ({
   }));
 };
 
-var css_248z$3 = ":root{--bg:#0d0a06;--bg2:#13100a;--surface:#1a1510;--border:#3d3020;--border2:#5a4530;--ember:#f97316;--sage:#4ade80;--text:#e8d5b0}.Spellbook-module__spellbook___oQGni{margin:0 auto 3rem;max-width:900px;padding:0 1.5rem}.Spellbook-module__charSheet___BoHKo{background:var(--surface);border:1px solid var(--border2);padding:0 1.5rem;position:relative}.Spellbook-module__charSheet___BoHKo:after,.Spellbook-module__charSheet___BoHKo:before{background:var(--bg);color:var(--ember);content:\"◆\";font-size:1rem;padding:0 .5rem;position:absolute;top:-.6rem}.Spellbook-module__charSheet___BoHKo:before{left:2rem}.Spellbook-module__charSheet___BoHKo:after{right:2rem}.Spellbook-module__sectionTitle___3VjMO{border-bottom:1px solid var(--border);color:var(--ember);font-family:Cinzel,serif;font-size:.7rem;letter-spacing:.25em;margin-bottom:1.5rem;padding:1.2rem 0 1rem;text-transform:uppercase}.Spellbook-module__spellGrid___QQ4i6{display:flex;flex-direction:column;gap:.4rem;padding-bottom:1.5rem}.Spellbook-module__spell___BHPX1{align-items:center;background:var(--bg2);border:1px solid var(--border);display:grid;gap:1rem;grid-template-columns:1fr 1fr;padding:.6rem .9rem}@media (max-width:600px){.Spellbook-module__spell___BHPX1{grid-template-columns:1fr}}.Spellbook-module__spellName___0WR5w{color:var(--text);font-size:.85rem}.Spellbook-module__spellCmd___SyeDp{background:#4ade800f;border:1px solid #4ade8026;color:var(--sage);cursor:pointer;font-family:Share Tech Mono,monospace;font-size:.72rem;overflow-x:auto;padding:.2rem .5rem;transition:all .15s;white-space:nowrap}.Spellbook-module__spellCmd___SyeDp:hover{background:#4ade801f;border-color:#4ade804d}";
+var css_248z$3 = ".Spellbook-module__spellbook___oQGni{margin:0 auto 3rem;max-width:900px;padding:0 1.5rem}.Spellbook-module__charSheet___BoHKo{background:var(--surface);border:1px solid var(--border2);padding:0 1.5rem;position:relative}.Spellbook-module__charSheet___BoHKo:after,.Spellbook-module__charSheet___BoHKo:before{background:var(--bg);color:var(--ember);content:\"◆\";font-size:1rem;padding:0 .5rem;position:absolute;top:-.6rem}.Spellbook-module__charSheet___BoHKo:before{left:2rem}.Spellbook-module__charSheet___BoHKo:after{right:2rem}.Spellbook-module__sectionTitle___3VjMO{border-bottom:1px solid var(--border);color:var(--ember);font-family:Cinzel,serif;font-size:.7rem;letter-spacing:.25em;margin-bottom:1.5rem;padding:1.2rem 0 1rem;text-transform:uppercase}.Spellbook-module__spellGrid___QQ4i6{display:flex;flex-direction:column;gap:.4rem;padding-bottom:1.5rem}.Spellbook-module__spell___BHPX1{align-items:center;background:var(--bg2);border:1px solid var(--border);display:grid;gap:1rem;grid-template-columns:1fr 1fr;padding:.6rem .9rem}@media (max-width:600px){.Spellbook-module__spell___BHPX1{grid-template-columns:1fr}}.Spellbook-module__spellName___0WR5w{color:var(--text);font-size:.85rem}.Spellbook-module__spellCmd___SyeDp{background:rgba(var(--sage-rgb),.06);border:1px solid rgba(var(--sage-rgb),.15);color:var(--sage);cursor:pointer;font-family:Share Tech Mono,monospace;font-size:.72rem;overflow-x:auto;padding:.2rem .5rem;transition:all .15s;white-space:nowrap}.Spellbook-module__spellCmd___SyeDp:hover{background:rgba(var(--sage-rgb),.12);border-color:rgba(var(--sage-rgb),.3)}";
 var styles$3 = {"spellbook":"Spellbook-module__spellbook___oQGni","charSheet":"Spellbook-module__charSheet___BoHKo","sectionTitle":"Spellbook-module__sectionTitle___3VjMO","spellGrid":"Spellbook-module__spellGrid___QQ4i6","spell":"Spellbook-module__spell___BHPX1","spellName":"Spellbook-module__spellName___0WR5w","spellCmd":"Spellbook-module__spellCmd___SyeDp"};
 styleInject(css_248z$3);
 
@@ -4288,7 +4288,7 @@ var quizDataJson = {
 }
 };
 
-var css_248z$2 = ":root{--bg:#0d0a06;--bg2:#13100a;--surface:#1a1510;--surface2:#221c14;--border:#3d3020;--border2:#5a4530;--ember:#f97316;--ember2:#fbbf24;--sage:#4ade80;--muted:#8a7055;--dim:#5a4535}.QuizModal-module__quizBackdrop___ARu85{align-items:center;backdrop-filter:blur(4px);background:#000000d9;display:flex;inset:0;justify-content:center;opacity:0;padding:1rem;pointer-events:none;position:fixed;transition:opacity .3s ease;z-index:50000}.QuizModal-module__quizBackdrop___ARu85.QuizModal-module__active___CdCfB{opacity:1;pointer-events:all}.QuizModal-module__quizModal___LRjF1{background:var(--surface);border:1px solid var(--border2);max-height:90vh;max-width:680px;overflow-y:auto;position:relative;scrollbar-color:var(--border2) var(--bg);scrollbar-width:thin;transform:translateY(20px);transition:transform .3s ease;width:100%}.QuizModal-module__quizBackdrop___ARu85.QuizModal-module__active___CdCfB .QuizModal-module__quizModal___LRjF1{transform:translateY(0)}.QuizModal-module__quizModal___LRjF1:after,.QuizModal-module__quizModal___LRjF1:before{background:var(--surface);color:var(--ember);content:\"◆\";font-size:1rem;padding:0 .5rem;position:absolute;top:-.6rem}.QuizModal-module__quizModal___LRjF1:before{left:2rem}.QuizModal-module__quizModal___LRjF1:after{right:2rem}.QuizModal-module__quizHeader___hPRnV{background:var(--surface);border-bottom:1px solid var(--border);padding:1.5rem 1.5rem 1rem;position:sticky;top:0;z-index:10}.QuizModal-module__quizQuestTitle___9iMR9{color:var(--text);font-family:Cinzel,serif;font-size:1rem;font-weight:700;line-height:1.3;margin-bottom:.75rem}.QuizModal-module__quizMetaRow___2FeGr{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between}.QuizModal-module__quizTierBadges___tuad8{display:flex;gap:.4rem}.QuizModal-module__tierBadge___keUHq{border:1px solid;font-family:Share Tech Mono,monospace;font-size:.6rem;letter-spacing:.1em;padding:.15rem .5rem}.QuizModal-module__tierBadge___keUHq.QuizModal-module__beginner___Vnolt{background:#4ade800f;border-color:#4ade804d;color:var(--sage)}.QuizModal-module__tierBadge___keUHq.QuizModal-module__intermediate___hJ-B-{background:#fbbf240f;border-color:#fbbf244d;color:var(--ember2)}.QuizModal-module__tierBadge___keUHq.QuizModal-module__advanced___6WcGV{background:#f871710f;border-color:#f871714d;color:#f87171}.QuizModal-module__quizScoreDisplay___tWwMI{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.75rem}.QuizModal-module__quizProgressBar___1VsAX{background:var(--border);border-radius:2px;height:3px;margin-top:.75rem;overflow:hidden}.QuizModal-module__quizProgressFill___2ZASw{background:linear-gradient(90deg,var(--sage),var(--ember2));height:100%;transition:width .4s ease}.QuizModal-module__quizLoading___Y14cI{align-items:center;display:flex;flex-direction:column;gap:1.5rem;justify-content:center;padding:4rem 2rem}.QuizModal-module__quizLoadingIcon___62HyT{animation:QuizModal-module__spin___5mLlQ 2s linear infinite;font-size:2.5rem}@keyframes QuizModal-module__spin___5mLlQ{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.QuizModal-module__quizLoadingText___rZ1m4{color:var(--muted);font-family:Cinzel,serif;font-size:.9rem;font-style:italic;text-align:center}.QuizModal-module__quizLoadingSub___JbDRs{color:var(--dim);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.1em}.QuizModal-module__quizQuestions___LBUPl{display:flex;flex-direction:column;gap:1.5rem;padding:1.5rem}.QuizModal-module__quizBody___oDieI{min-height:200px}.QuizModal-module__questionBlock___TQo1n{background:var(--bg2);border:1px solid var(--border);opacity:0;padding:1.1rem 1.2rem;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}.QuizModal-module__questionBlock___TQo1n.QuizModal-module__visible___KmdOV{opacity:1;transform:translateY(0)}.QuizModal-module__questionBlock___TQo1n.QuizModal-module__correct___-F1i5{background:#4ade800a;border-color:#4ade8066}.QuizModal-module__questionBlock___TQo1n.QuizModal-module__wrong___m1gIk{background:#f871710a;border-color:#f8717166}.QuizModal-module__qTierLabel___EnyDT{display:inline-block;font-family:Share Tech Mono,monospace;font-size:.58rem;letter-spacing:.12em;margin-bottom:.5rem;padding:.1rem .4rem}.QuizModal-module__qTierLabel___EnyDT.QuizModal-module__beginner___Vnolt{color:var(--sage)}.QuizModal-module__qTierLabel___EnyDT.QuizModal-module__intermediate___hJ-B-{color:var(--ember2)}.QuizModal-module__qTierLabel___EnyDT.QuizModal-module__advanced___6WcGV{color:#f87171}.QuizModal-module__qNumber___pnfyC{color:var(--dim);font-family:Share Tech Mono,monospace;font-size:.6rem;margin-right:.4rem}.QuizModal-module__qText___Xq01D{color:var(--text);font-size:.95rem;line-height:1.5;margin-bottom:.9rem}.QuizModal-module__qOptions___-jL4f{display:flex;flex-direction:column;gap:.4rem}.QuizModal-module__qOption___qpozn{align-items:flex-start;border:1px solid var(--border);color:var(--muted);cursor:pointer;display:flex;font-size:.88rem;gap:.7rem;line-height:1.4;padding:.6rem .8rem;transition:all .15s}.QuizModal-module__qOption___qpozn:hover:not(.QuizModal-module__disabled___cDaZS){background:#ffffff05;border-color:var(--border2);color:var(--text)}.QuizModal-module__qOption___qpozn.QuizModal-module__selected___cYxa8{background:#f973160f;border-color:var(--ember);color:var(--text)}.QuizModal-module__qOption___qpozn.QuizModal-module__correctAns___bLi5f{background:#4ade8014!important;border-color:var(--sage)!important;color:var(--sage)!important}.QuizModal-module__qOption___qpozn.QuizModal-module__wrongAns___hd7qR{background:#f8717114!important;border-color:#f87171!important;color:#f87171!important}.QuizModal-module__qOption___qpozn.QuizModal-module__disabled___cDaZS{cursor:default}.QuizModal-module__qOptKey___JOlRX{color:var(--dim);flex-shrink:0;font-family:Share Tech Mono,monospace;font-size:.65rem;margin-top:1px;min-width:1.2rem}.QuizModal-module__qExplanation___Pavzx{border-left:2px solid var(--border2);color:var(--muted);display:none;font-size:.82rem;font-style:italic;line-height:1.5;margin-top:.75rem;padding:.6rem .8rem}.QuizModal-module__qExplanation___Pavzx.QuizModal-module__show___bepDj{display:block}.QuizModal-module__qExplanation___Pavzx.QuizModal-module__correctExp___LUZNz{border-color:var(--sage)}.QuizModal-module__qExplanation___Pavzx.QuizModal-module__wrongExp___fq-Oj{border-color:#f87171}.QuizModal-module__quizFooter___zIhvF{align-items:center;background:var(--surface);border-top:1px solid var(--border);bottom:0;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;padding:1.2rem 1.5rem;position:sticky}.QuizModal-module__quizResultMsg___sbe53{flex:1;font-family:Cinzel,serif;font-size:.85rem}.QuizModal-module__quizResultMsg___sbe53.QuizModal-module__pass___FayDE{color:var(--sage)}.QuizModal-module__quizResultMsg___sbe53.QuizModal-module__fail___Nle-K{color:#f87171}.QuizModal-module__quizResultMsg___sbe53.QuizModal-module__pending___BSkGy{color:var(--muted);font-family:Crimson Text,serif;font-style:italic}.QuizModal-module__quizBtn___wS01e{background:none;border:1px solid;cursor:pointer;font-family:Cinzel,serif;font-size:.78rem;letter-spacing:.08em;padding:.6rem 1.4rem;transition:all .2s;white-space:nowrap}.QuizModal-module__quizBtnClose___XCfWa{border-color:var(--border2);color:var(--muted)}.QuizModal-module__quizBtnClose___XCfWa:hover{border-color:var(--muted);color:var(--text)}.QuizModal-module__quizBtnComplete___btrXC{background:var(--sage);border-color:var(--sage);color:var(--bg);display:none}.QuizModal-module__quizBtnComplete___btrXC:hover{background:#22c55e;border-color:#22c55e}.QuizModal-module__quizBtnComplete___btrXC.QuizModal-module__show___bepDj{display:block}.QuizModal-module__quizBtnRetry___vRmDh{border-color:#fbbf2466;color:var(--ember2);display:none}.QuizModal-module__quizBtnRetry___vRmDh:hover{background:#fbbf2414}.QuizModal-module__quizBtnRetry___vRmDh.QuizModal-module__show___bepDj{display:block}";
+var css_248z$2 = ".QuizModal-module__quizBackdrop___ARu85{align-items:center;backdrop-filter:blur(4px);background:#000000d9;display:flex;inset:0;justify-content:center;opacity:0;padding:1rem;pointer-events:none;position:fixed;transition:opacity .3s ease;z-index:50000}.QuizModal-module__quizBackdrop___ARu85.QuizModal-module__active___CdCfB{opacity:1;pointer-events:all}.QuizModal-module__quizModal___LRjF1{background:var(--surface);border:1px solid var(--border2);max-height:90vh;max-width:680px;overflow-y:auto;position:relative;scrollbar-color:var(--border2) var(--bg);scrollbar-width:thin;transform:translateY(20px);transition:transform .3s ease;width:100%}.QuizModal-module__quizBackdrop___ARu85.QuizModal-module__active___CdCfB .QuizModal-module__quizModal___LRjF1{transform:translateY(0)}.QuizModal-module__quizModal___LRjF1:after,.QuizModal-module__quizModal___LRjF1:before{background:var(--surface);color:var(--ember);content:\"◆\";font-size:1rem;padding:0 .5rem;position:absolute;top:-.6rem}.QuizModal-module__quizModal___LRjF1:before{left:2rem}.QuizModal-module__quizModal___LRjF1:after{right:2rem}.QuizModal-module__quizHeader___hPRnV{background:var(--surface);border-bottom:1px solid var(--border);padding:1.5rem 1.5rem 1rem;position:sticky;top:0;z-index:10}.QuizModal-module__quizQuestTitle___9iMR9{color:var(--text);font-family:Cinzel,serif;font-size:1rem;font-weight:700;line-height:1.3;margin-bottom:.75rem}.QuizModal-module__quizMetaRow___2FeGr{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between}.QuizModal-module__quizTierBadges___tuad8{display:flex;gap:.4rem}.QuizModal-module__tierBadge___keUHq{border:1px solid;font-family:Share Tech Mono,monospace;font-size:.6rem;letter-spacing:.1em;padding:.15rem .5rem}.QuizModal-module__tierBadge___keUHq.QuizModal-module__beginner___Vnolt{background:rgba(var(--sage-rgb),.06);border-color:rgba(var(--sage-rgb),.3);color:var(--sage)}.QuizModal-module__tierBadge___keUHq.QuizModal-module__intermediate___hJ-B-{background:rgba(var(--ember2-rgb),.06);border-color:rgba(var(--ember2-rgb),.3);color:var(--ember2)}.QuizModal-module__tierBadge___keUHq.QuizModal-module__advanced___6WcGV{background:rgba(var(--blood-light-rgb),.06);border-color:rgba(var(--blood-light-rgb),.3);color:var(--blood-light)}.QuizModal-module__quizScoreDisplay___tWwMI{color:var(--muted);font-family:Share Tech Mono,monospace;font-size:.75rem}.QuizModal-module__quizProgressBar___1VsAX{background:var(--border);border-radius:2px;height:3px;margin-top:.75rem;overflow:hidden}.QuizModal-module__quizProgressFill___2ZASw{background:linear-gradient(90deg,var(--sage),var(--ember2));height:100%;transition:width .4s ease}.QuizModal-module__quizLoading___Y14cI{align-items:center;display:flex;flex-direction:column;gap:1.5rem;justify-content:center;padding:4rem 2rem}.QuizModal-module__quizLoadingIcon___62HyT{animation:QuizModal-module__spin___5mLlQ 2s linear infinite;font-size:2.5rem}@keyframes QuizModal-module__spin___5mLlQ{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.QuizModal-module__quizLoadingText___rZ1m4{color:var(--muted);font-family:Cinzel,serif;font-size:.9rem;font-style:italic;text-align:center}.QuizModal-module__quizLoadingSub___JbDRs{color:var(--dim);font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.1em}.QuizModal-module__quizQuestions___LBUPl{display:flex;flex-direction:column;gap:1.5rem;padding:1.5rem}.QuizModal-module__quizBody___oDieI{min-height:200px}.QuizModal-module__questionBlock___TQo1n{background:var(--bg2);border:1px solid var(--border);opacity:0;padding:1.1rem 1.2rem;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}.QuizModal-module__questionBlock___TQo1n.QuizModal-module__visible___KmdOV{opacity:1;transform:translateY(0)}.QuizModal-module__questionBlock___TQo1n.QuizModal-module__correct___-F1i5{background:rgba(var(--sage-rgb),.04);border-color:rgba(var(--sage-rgb),.4)}.QuizModal-module__questionBlock___TQo1n.QuizModal-module__wrong___m1gIk{background:rgba(var(--blood-light-rgb),.04);border-color:rgba(var(--blood-light-rgb),.4)}.QuizModal-module__qTierLabel___EnyDT{display:inline-block;font-family:Share Tech Mono,monospace;font-size:.58rem;letter-spacing:.12em;margin-bottom:.5rem;padding:.1rem .4rem}.QuizModal-module__qTierLabel___EnyDT.QuizModal-module__beginner___Vnolt{color:var(--sage)}.QuizModal-module__qTierLabel___EnyDT.QuizModal-module__intermediate___hJ-B-{color:var(--ember2)}.QuizModal-module__qTierLabel___EnyDT.QuizModal-module__advanced___6WcGV{color:var(--blood-light)}.QuizModal-module__qNumber___pnfyC{color:var(--dim);font-family:Share Tech Mono,monospace;font-size:.6rem;margin-right:.4rem}.QuizModal-module__qText___Xq01D{color:var(--text);font-size:.95rem;line-height:1.5;margin-bottom:.9rem}.QuizModal-module__qOptions___-jL4f{display:flex;flex-direction:column;gap:.4rem}.QuizModal-module__qOption___qpozn{align-items:flex-start;border:1px solid var(--border);color:var(--muted);cursor:pointer;display:flex;font-size:.88rem;gap:.7rem;line-height:1.4;padding:.6rem .8rem;transition:all .15s}.QuizModal-module__qOption___qpozn:hover:not(.QuizModal-module__disabled___cDaZS){background:#ffffff05;border-color:var(--border2);color:var(--text)}.QuizModal-module__qOption___qpozn.QuizModal-module__selected___cYxa8{background:rgba(var(--ember-rgb),.06);border-color:var(--ember);color:var(--text)}.QuizModal-module__qOption___qpozn.QuizModal-module__correctAns___bLi5f{background:rgba(var(--sage-rgb),.08)!important;border-color:var(--sage)!important;color:var(--sage)!important}.QuizModal-module__qOption___qpozn.QuizModal-module__wrongAns___hd7qR{background:rgba(var(--blood-light-rgb),.08)!important;border-color:var(--blood-light)!important;color:var(--blood-light)!important}.QuizModal-module__qOption___qpozn.QuizModal-module__disabled___cDaZS{cursor:default}.QuizModal-module__qOptKey___JOlRX{color:var(--dim);flex-shrink:0;font-family:Share Tech Mono,monospace;font-size:.65rem;margin-top:1px;min-width:1.2rem}.QuizModal-module__qExplanation___Pavzx{border-left:2px solid var(--border2);color:var(--muted);display:none;font-size:.82rem;font-style:italic;line-height:1.5;margin-top:.75rem;padding:.6rem .8rem}.QuizModal-module__qExplanation___Pavzx.QuizModal-module__show___bepDj{display:block}.QuizModal-module__qExplanation___Pavzx.QuizModal-module__correctExp___LUZNz{border-color:var(--sage)}.QuizModal-module__qExplanation___Pavzx.QuizModal-module__wrongExp___fq-Oj{border-color:var(--blood-light)}.QuizModal-module__quizFooter___zIhvF{align-items:center;background:var(--surface);border-top:1px solid var(--border);bottom:0;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;padding:1.2rem 1.5rem;position:sticky}.QuizModal-module__quizResultMsg___sbe53{flex:1;font-family:Cinzel,serif;font-size:.85rem}.QuizModal-module__quizResultMsg___sbe53.QuizModal-module__pass___FayDE{color:var(--sage)}.QuizModal-module__quizResultMsg___sbe53.QuizModal-module__fail___Nle-K{color:var(--blood-light)}.QuizModal-module__quizResultMsg___sbe53.QuizModal-module__pending___BSkGy{color:var(--muted);font-family:Crimson Text,serif;font-style:italic}.QuizModal-module__quizBtn___wS01e{background:none;border:1px solid;cursor:pointer;font-family:Cinzel,serif;font-size:.78rem;letter-spacing:.08em;padding:.6rem 1.4rem;transition:all .2s;white-space:nowrap}.QuizModal-module__quizBtnClose___XCfWa{border-color:var(--border2);color:var(--muted)}.QuizModal-module__quizBtnClose___XCfWa:hover{border-color:var(--muted);color:var(--text)}.QuizModal-module__quizBtnComplete___btrXC{background:var(--sage);border-color:var(--sage);color:var(--bg);display:none}.QuizModal-module__quizBtnComplete___btrXC:hover{background:var(--sage-bright);border-color:var(--sage-bright)}.QuizModal-module__quizBtnComplete___btrXC.QuizModal-module__show___bepDj{display:block}.QuizModal-module__quizBtnRetry___vRmDh{border-color:rgba(var(--ember2-rgb),.4);color:var(--ember2);display:none}.QuizModal-module__quizBtnRetry___vRmDh:hover{background:rgba(var(--ember2-rgb),.08)}.QuizModal-module__quizBtnRetry___vRmDh.QuizModal-module__show___bepDj{display:block}";
 var styles$2 = {"quizBackdrop":"QuizModal-module__quizBackdrop___ARu85","active":"QuizModal-module__active___CdCfB","quizModal":"QuizModal-module__quizModal___LRjF1","quizHeader":"QuizModal-module__quizHeader___hPRnV","quizQuestTitle":"QuizModal-module__quizQuestTitle___9iMR9","quizMetaRow":"QuizModal-module__quizMetaRow___2FeGr","quizTierBadges":"QuizModal-module__quizTierBadges___tuad8","tierBadge":"QuizModal-module__tierBadge___keUHq","beginner":"QuizModal-module__beginner___Vnolt","intermediate":"QuizModal-module__intermediate___hJ-B-","advanced":"QuizModal-module__advanced___6WcGV","quizScoreDisplay":"QuizModal-module__quizScoreDisplay___tWwMI","quizProgressBar":"QuizModal-module__quizProgressBar___1VsAX","quizProgressFill":"QuizModal-module__quizProgressFill___2ZASw","quizLoading":"QuizModal-module__quizLoading___Y14cI","quizLoadingIcon":"QuizModal-module__quizLoadingIcon___62HyT","spin":"QuizModal-module__spin___5mLlQ","quizLoadingText":"QuizModal-module__quizLoadingText___rZ1m4","quizLoadingSub":"QuizModal-module__quizLoadingSub___JbDRs","quizQuestions":"QuizModal-module__quizQuestions___LBUPl","quizBody":"QuizModal-module__quizBody___oDieI","questionBlock":"QuizModal-module__questionBlock___TQo1n","visible":"QuizModal-module__visible___KmdOV","correct":"QuizModal-module__correct___-F1i5","wrong":"QuizModal-module__wrong___m1gIk","qTierLabel":"QuizModal-module__qTierLabel___EnyDT","qNumber":"QuizModal-module__qNumber___pnfyC","qText":"QuizModal-module__qText___Xq01D","qOptions":"QuizModal-module__qOptions___-jL4f","qOption":"QuizModal-module__qOption___qpozn","disabled":"QuizModal-module__disabled___cDaZS","selected":"QuizModal-module__selected___cYxa8","correctAns":"QuizModal-module__correctAns___bLi5f","wrongAns":"QuizModal-module__wrongAns___hd7qR","qOptKey":"QuizModal-module__qOptKey___JOlRX","qExplanation":"QuizModal-module__qExplanation___Pavzx","show":"QuizModal-module__show___bepDj","correctExp":"QuizModal-module__correctExp___LUZNz","wrongExp":"QuizModal-module__wrongExp___fq-Oj","quizFooter":"QuizModal-module__quizFooter___zIhvF","quizResultMsg":"QuizModal-module__quizResultMsg___sbe53","pass":"QuizModal-module__pass___FayDE","fail":"QuizModal-module__fail___Nle-K","pending":"QuizModal-module__pending___BSkGy","quizBtn":"QuizModal-module__quizBtn___wS01e","quizBtnClose":"QuizModal-module__quizBtnClose___XCfWa","quizBtnComplete":"QuizModal-module__quizBtnComplete___btrXC","quizBtnRetry":"QuizModal-module__quizBtnRetry___vRmDh"};
 styleInject(css_248z$2);
 
@@ -4488,7 +4488,7 @@ const QuizModal = ({
   }, "\u2715 Close")))));
 };
 
-var css_248z$1 = ":root{--surface2:#221c14;--ember:#f97316;--ember2:#fbbf24}.Toast-module__toast___czpzb{background:var(--surface2);border:1px solid var(--ember);bottom:2rem;box-shadow:0 0 40px #f973164d;color:var(--ember2);font-family:Cinzel,serif;font-size:.85rem;left:50%;padding:.75rem 1.5rem;pointer-events:none;position:fixed;transform:translateX(-50%) translateY(100px);transition:transform .4s cubic-bezier(.22,1,.36,1);white-space:nowrap;z-index:10000}.Toast-module__toast___czpzb.Toast-module__show___VkLkl{transform:translateX(-50%) translateY(0)}";
+var css_248z$1 = ".Toast-module__toast___czpzb{background:var(--surface2);border:1px solid var(--ember);bottom:2rem;box-shadow:0 0 40px rgba(var(--ember-rgb),.3);color:var(--ember2);font-family:Cinzel,serif;font-size:.85rem;left:50%;padding:.75rem 1.5rem;pointer-events:none;position:fixed;transform:translateX(-50%) translateY(100px);transition:transform .4s cubic-bezier(.22,1,.36,1);white-space:nowrap;z-index:10000}.Toast-module__toast___czpzb.Toast-module__show___VkLkl{transform:translateX(-50%) translateY(0)}";
 var styles$1 = {"toast":"Toast-module__toast___czpzb","show":"Toast-module__show___VkLkl"};
 styleInject(css_248z$1);
 
@@ -4570,11 +4570,313 @@ const useGameState = () => {
   };
 };
 
-var css_248z = ":root{--bg:#0d0a06;--bg2:#13100a;--surface:#1a1510;--surface2:#221c14;--border:#3d3020;--border2:#5a4530;--ember:#f97316;--ember2:#fbbf24;--ember3:#fde68a;--blood:#dc2626;--sage:#4ade80;--ice:#67e8f9;--violet:#a78bfa;--text:#e8d5b0;--muted:#8a7055;--dim:#5a4535}.K8sQuizGame-module__app___nwQir{background:var(--bg);color:var(--text);font-family:Crimson Text,Georgia,serif;font-size:17px;line-height:1.6;min-height:100vh;overflow-x:hidden;position:relative}.K8sQuizGame-module__app___nwQir:before{background:repeating-linear-gradient(0deg,#0000,#0000 2px,#00000008 0,#00000008 4px);content:\"\";inset:0;pointer-events:none;position:fixed;z-index:9999}.K8sQuizGame-module__sparks___7f2vY{inset:0;overflow:hidden;pointer-events:none;position:fixed;z-index:1}.K8sQuizGame-module__levelupOverlay___mt4yW{animation:K8sQuizGame-module__levelFlash___6IQo6 1.5s ease forwards;background:#f9731626;inset:0;pointer-events:none;position:fixed;z-index:9998}@keyframes K8sQuizGame-module__levelFlash___6IQo6{0%{opacity:0}20%{opacity:1}80%{opacity:1}to{opacity:0}}.K8sQuizGame-module__hero___r-3ex{background:radial-gradient(ellipse at 50% 100%,#f973161f 0,#0000 70%);border-bottom:1px solid var(--border);overflow:hidden;padding:5rem 2rem 4rem;position:relative;text-align:center}.K8sQuizGame-module__hero___r-3ex:after{background:linear-gradient(90deg,#0000,var(--ember),var(--ember2),var(--ember),#0000);bottom:0;content:\"\";height:1px;left:0;position:absolute;right:0}.K8sQuizGame-module__container___BJhyA{margin:0 auto;max-width:900px;padding:0 1.5rem;position:relative;z-index:2}.K8sQuizGame-module__runeBorder___4w9Yu{color:var(--ember);display:inline-block;font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.4em;margin-bottom:1.5rem;opacity:.6}.K8sQuizGame-module__hero___r-3ex h1{-webkit-text-fill-color:#0000;background:linear-gradient(180deg,var(--ember3) 0,var(--ember) 60%,#c2410c 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 30px rgba(249,115,22,.4));font-family:Cinzel,serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1;margin-bottom:.5rem}.K8sQuizGame-module__heroSubtitle___9hqpb{color:var(--muted);font-size:1rem;font-style:italic;margin-bottom:2.5rem}.K8sQuizGame-module__ornament___wP-cq{color:var(--dim);font-size:.8rem;letter-spacing:.5em;padding:2rem 0 1rem;text-align:center}.K8sQuizGame-module__footer___xh0Lp{background:radial-gradient(ellipse at 50% 100%,#f973160d 0,#0000 70%);border-top:1px solid var(--border);color:var(--dim);font-size:.8rem;font-style:italic;padding:2rem 1rem 3rem;text-align:center}";
+/**
+ * Centralized Theme Configuration
+ *
+ * Change the entire website's color scheme by updating ACTIVE_THEME below.
+ * Each palette defines every CSS variable used across the app.
+ */
+
+const THEME_PALETTES = {
+  emberForge: {
+    name: 'Ember Forge',
+    description: 'Classic dark RPG with ember and amber — the original theme',
+    colors: {
+      bg: '#0d0a06',
+      bg2: '#13100a',
+      surface: '#1a1510',
+      surface2: '#221c14',
+      border: '#3d3020',
+      border2: '#5a4530',
+      ember: '#f97316',
+      ember2: '#fbbf24',
+      ember3: '#fde68a',
+      emberDark: '#c2410c',
+      blood: '#dc2626',
+      bloodLight: '#f87171',
+      bloodPale: '#fca5a5',
+      sage: '#4ade80',
+      sageBright: '#22c55e',
+      ice: '#67e8f9',
+      violet: '#a78bfa',
+      text: '#e8d5b0',
+      muted: '#8a7055',
+      dim: '#5a4535',
+      emberRgb: '249, 115, 22',
+      ember2Rgb: '251, 191, 36',
+      sageRgb: '74, 222, 128',
+      bloodRgb: '220, 38, 38',
+      bloodLightRgb: '248, 113, 113',
+      iceRgb: '103, 232, 249'
+    }
+  },
+  frostKingdom: {
+    name: 'Frost Kingdom',
+    description: 'Cool blue ice kingdom — crisp and mystical',
+    colors: {
+      bg: '#060a0d',
+      bg2: '#0a1015',
+      surface: '#0f1a22',
+      surface2: '#142530',
+      border: '#1e3a4f',
+      border2: '#2d5570',
+      ember: '#38bdf8',
+      ember2: '#67e8f9',
+      ember3: '#cffafe',
+      emberDark: '#0284c7',
+      blood: '#dc2626',
+      bloodLight: '#f87171',
+      bloodPale: '#fca5a5',
+      sage: '#4ade80',
+      sageBright: '#22c55e',
+      ice: '#a5f3fc',
+      violet: '#c4b5fd',
+      text: '#c8e6f5',
+      muted: '#5588a0',
+      dim: '#355570',
+      emberRgb: '56, 189, 248',
+      ember2Rgb: '103, 232, 249',
+      sageRgb: '74, 222, 128',
+      bloodRgb: '220, 38, 38',
+      bloodLightRgb: '248, 113, 113',
+      iceRgb: '165, 243, 252'
+    }
+  },
+  shadowRealm: {
+    name: 'Shadow Realm',
+    description: 'Deep purple cyberpunk — mystical and futuristic',
+    colors: {
+      bg: '#0a0612',
+      bg2: '#100b18',
+      surface: '#18102a',
+      surface2: '#201838',
+      border: '#35255a',
+      border2: '#4a3580',
+      ember: '#a78bfa',
+      ember2: '#c4b5fd',
+      ember3: '#ede9fe',
+      emberDark: '#7c3aed',
+      blood: '#ef4444',
+      bloodLight: '#f87171',
+      bloodPale: '#fca5a5',
+      sage: '#4ade80',
+      sageBright: '#22c55e',
+      ice: '#67e8f9',
+      violet: '#e879f9',
+      text: '#d8ccf0',
+      muted: '#7a65a8',
+      dim: '#503d75',
+      emberRgb: '167, 139, 250',
+      ember2Rgb: '196, 181, 253',
+      sageRgb: '74, 222, 128',
+      bloodRgb: '239, 68, 68',
+      bloodLightRgb: '248, 113, 113',
+      iceRgb: '103, 232, 249'
+    }
+  },
+  enchantedForest: {
+    name: 'Enchanted Forest',
+    description: 'Deep emerald green — nature and growth',
+    colors: {
+      bg: '#040d06',
+      bg2: '#08130a',
+      surface: '#0c1a10',
+      surface2: '#122214',
+      border: '#1e3d22',
+      border2: '#2d5a32',
+      ember: '#4ade80',
+      ember2: '#86efac',
+      ember3: '#dcfce7',
+      emberDark: '#16a34a',
+      blood: '#dc2626',
+      bloodLight: '#f87171',
+      bloodPale: '#fca5a5',
+      sage: '#a3e635',
+      sageBright: '#84cc16',
+      ice: '#67e8f9',
+      violet: '#a78bfa',
+      text: '#c5e8d0',
+      muted: '#558a60',
+      dim: '#355a3d',
+      emberRgb: '74, 222, 128',
+      ember2Rgb: '134, 239, 172',
+      sageRgb: '163, 230, 53',
+      bloodRgb: '220, 38, 38',
+      bloodLightRgb: '248, 113, 113',
+      iceRgb: '103, 232, 249'
+    }
+  },
+  dragonsBreath: {
+    name: "Dragon's Breath",
+    description: 'Fiery reds and warm golds — the heat of battle',
+    colors: {
+      bg: '#0d0604',
+      bg2: '#150a06',
+      surface: '#1f100a',
+      surface2: '#2a1610',
+      border: '#4a2518',
+      border2: '#6a3525',
+      ember: '#ef4444',
+      ember2: '#f97316',
+      ember3: '#fde68a',
+      emberDark: '#b91c1c',
+      blood: '#f43f5e',
+      bloodLight: '#fb7185',
+      bloodPale: '#fecdd3',
+      sage: '#4ade80',
+      sageBright: '#22c55e',
+      ice: '#67e8f9',
+      violet: '#a78bfa',
+      text: '#f0d5c0',
+      muted: '#9a6050',
+      dim: '#6a4035',
+      emberRgb: '239, 68, 68',
+      ember2Rgb: '249, 115, 22',
+      sageRgb: '74, 222, 128',
+      bloodRgb: '244, 63, 94',
+      bloodLightRgb: '251, 113, 133',
+      iceRgb: '103, 232, 249'
+    }
+  },
+  ironCitadel: {
+    name: 'Iron Citadel',
+    description: 'Neutral steel and slate — disciplined and professional',
+    colors: {
+      bg: '#0a0a0c',
+      bg2: '#101013',
+      surface: '#18181b',
+      surface2: '#202024',
+      border: '#3f3f46',
+      border2: '#52525b',
+      ember: '#a1a1aa',
+      ember2: '#d4d4d8',
+      ember3: '#f4f4f5',
+      emberDark: '#71717a',
+      blood: '#dc2626',
+      bloodLight: '#f87171',
+      bloodPale: '#fca5a5',
+      sage: '#4ade80',
+      sageBright: '#22c55e',
+      ice: '#67e8f9',
+      violet: '#a78bfa',
+      text: '#d4d4d8',
+      muted: '#71717a',
+      dim: '#52525b',
+      emberRgb: '161, 161, 170',
+      ember2Rgb: '212, 212, 216',
+      sageRgb: '74, 222, 128',
+      bloodRgb: '220, 38, 38',
+      bloodLightRgb: '248, 113, 113',
+      iceRgb: '103, 232, 249'
+    }
+  }
+};
+
+/**
+ * ━━━ CHANGE THIS TO SWITCH THEMES ━━━
+ *
+ * Available: 'emberForge' | 'frostKingdom' | 'shadowRealm'
+ *          | 'enchantedForest' | 'dragonsBreath' | 'ironCitadel'
+ */
+const ACTIVE_THEME = 'enchantedForest';
+const getActiveTheme = () => THEME_PALETTES[ACTIVE_THEME] || THEME_PALETTES.emberForge;
+const getThemeColors = () => getActiveTheme().colors;
+const getAllThemeNames = () => Object.entries(THEME_PALETTES).map(([key, val]) => ({
+  key,
+  name: val.name,
+  description: val.description
+}));
+
+/**
+ * Returns an object mapping CSS custom-property names to values,
+ * ready to be applied on the document root.
+ */
+const getCSSVariables = themeKey => {
+  const palette = THEME_PALETTES[themeKey] || THEME_PALETTES[ACTIVE_THEME];
+  const c = palette.colors;
+  return {
+    '--bg': c.bg,
+    '--bg2': c.bg2,
+    '--surface': c.surface,
+    '--surface2': c.surface2,
+    '--border': c.border,
+    '--border2': c.border2,
+    '--ember': c.ember,
+    '--ember2': c.ember2,
+    '--ember3': c.ember3,
+    '--ember-dark': c.emberDark,
+    '--blood': c.blood,
+    '--blood-light': c.bloodLight,
+    '--blood-pale': c.bloodPale,
+    '--sage': c.sage,
+    '--sage-bright': c.sageBright,
+    '--ice': c.ice,
+    '--violet': c.violet,
+    '--text': c.text,
+    '--muted': c.muted,
+    '--dim': c.dim,
+    '--ember-rgb': c.emberRgb,
+    '--ember2-rgb': c.ember2Rgb,
+    '--sage-rgb': c.sageRgb,
+    '--blood-rgb': c.bloodRgb,
+    '--blood-light-rgb': c.bloodLightRgb,
+    '--ice-rgb': c.iceRgb
+  };
+};
+
+const ThemeContext = /*#__PURE__*/React.createContext(null);
+
+/**
+ * Applies CSS custom properties from the active theme onto :root
+ * so every CSS file picks them up automatically.
+ */
+const applyThemeToDOM = themeKey => {
+  const vars = getCSSVariables(themeKey);
+  const root = document.documentElement;
+  Object.entries(vars).forEach(([prop, value]) => {
+    root.style.setProperty(prop, value);
+  });
+};
+const ThemeProvider = ({
+  children,
+  initialTheme
+}) => {
+  const [themeKey, setThemeKey] = React.useState(initialTheme || ACTIVE_THEME);
+  React.useEffect(() => {
+    applyThemeToDOM(themeKey);
+  }, [themeKey]);
+  const switchTheme = React.useCallback(newKey => {
+    if (THEME_PALETTES[newKey]) {
+      setThemeKey(newKey);
+    }
+  }, []);
+  const value = {
+    themeKey,
+    themeName: (THEME_PALETTES[themeKey] || THEME_PALETTES[ACTIVE_THEME]).name,
+    switchTheme,
+    availableThemes: Object.entries(THEME_PALETTES).map(([key, t]) => ({
+      key,
+      name: t.name,
+      description: t.description
+    }))
+  };
+  return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+    value: value
+  }, children);
+};
+const useTheme = () => {
+  const ctx = React.useContext(ThemeContext);
+  if (!ctx) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return ctx;
+};
+
+var css_248z = ".K8sQuizGame-module__app___nwQir{background:var(--bg);color:var(--text);font-family:Crimson Text,Georgia,serif;font-size:17px;line-height:1.6;min-height:100vh;overflow-x:hidden;position:relative}.K8sQuizGame-module__app___nwQir:before{background:repeating-linear-gradient(0deg,#0000,#0000 2px,#00000008 0,#00000008 4px);content:\"\";inset:0;pointer-events:none;position:fixed;z-index:9999}.K8sQuizGame-module__sparks___7f2vY{inset:0;overflow:hidden;pointer-events:none;position:fixed;z-index:1}.K8sQuizGame-module__levelupOverlay___mt4yW{animation:K8sQuizGame-module__levelFlash___6IQo6 1.5s ease forwards;background:rgba(var(--ember-rgb),.15);inset:0;pointer-events:none;position:fixed;z-index:9998}@keyframes K8sQuizGame-module__levelFlash___6IQo6{0%{opacity:0}20%{opacity:1}80%{opacity:1}to{opacity:0}}.K8sQuizGame-module__hero___r-3ex{background:radial-gradient(ellipse at 50% 100%,rgba(var(--ember-rgb),.12) 0,#0000 70%);border-bottom:1px solid var(--border);overflow:hidden;padding:5rem 2rem 4rem;position:relative;text-align:center}.K8sQuizGame-module__hero___r-3ex:after{background:linear-gradient(90deg,#0000,var(--ember),var(--ember2),var(--ember),#0000);bottom:0;content:\"\";height:1px;left:0;position:absolute;right:0}.K8sQuizGame-module__container___BJhyA{margin:0 auto;max-width:900px;padding:0 1.5rem;position:relative;z-index:2}.K8sQuizGame-module__runeBorder___4w9Yu{color:var(--ember);display:inline-block;font-family:Share Tech Mono,monospace;font-size:.65rem;letter-spacing:.4em;margin-bottom:1.5rem;opacity:.6}.K8sQuizGame-module__hero___r-3ex h1{-webkit-text-fill-color:#0000;background:linear-gradient(180deg,var(--ember3) 0,var(--ember) 60%,var(--ember-dark) 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 30px rgba(var(--ember-rgb),.4));font-family:Cinzel,serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1;margin-bottom:.5rem}.K8sQuizGame-module__heroSubtitle___9hqpb{color:var(--muted);font-size:1rem;font-style:italic;margin-bottom:2.5rem}.K8sQuizGame-module__ornament___wP-cq{color:var(--dim);font-size:.8rem;letter-spacing:.5em;padding:2rem 0 1rem;text-align:center}.K8sQuizGame-module__footer___xh0Lp{background:radial-gradient(ellipse at 50% 100%,rgba(var(--ember-rgb),.05) 0,#0000 70%);border-top:1px solid var(--border);color:var(--dim);font-size:.8rem;font-style:italic;padding:2rem 1rem 3rem;text-align:center}";
 var styles = {"app":"K8sQuizGame-module__app___nwQir","sparks":"K8sQuizGame-module__sparks___7f2vY","levelupOverlay":"K8sQuizGame-module__levelupOverlay___mt4yW","hero":"K8sQuizGame-module__hero___r-3ex","container":"K8sQuizGame-module__container___BJhyA","runeBorder":"K8sQuizGame-module__runeBorder___4w9Yu","heroSubtitle":"K8sQuizGame-module__heroSubtitle___9hqpb","ornament":"K8sQuizGame-module__ornament___wP-cq","footer":"K8sQuizGame-module__footer___xh0Lp"};
 styleInject(css_248z);
 
-const K8sQuizGame = () => {
+const K8sQuizGameInner = () => {
   const {
     state,
     markQuestDone,
@@ -4698,12 +5000,25 @@ const K8sQuizGame = () => {
     }
   }));
 };
+const K8sQuizGame = ({
+  theme,
+  ...props
+}) => /*#__PURE__*/React.createElement(ThemeProvider, {
+  initialTheme: theme
+}, /*#__PURE__*/React.createElement(K8sQuizGameInner, props));
 
 exports.ACHIEVEMENTS = ACHIEVEMENTS;
+exports.ACTIVE_THEME = ACTIVE_THEME;
 exports.ACTS = ACTS;
 exports.K8sQuizGame = K8sQuizGame;
 exports.LEVELS = LEVELS;
 exports.SPELLS = SPELLS;
+exports.THEME_PALETTES = THEME_PALETTES;
+exports.ThemeProvider = ThemeProvider;
 exports.default = K8sQuizGame;
+exports.getActiveTheme = getActiveTheme;
+exports.getAllThemeNames = getAllThemeNames;
+exports.getThemeColors = getThemeColors;
 exports.useGameState = useGameState;
+exports.useTheme = useTheme;
 //# sourceMappingURL=index.js.map
